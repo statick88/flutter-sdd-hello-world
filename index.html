@@ -3,81 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hola Mundo con SDD + OpenCode</title>
+  <title>Desarrollo asistido por IA — Diego Saavedra</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-primary: #ffffff;
-      --bg-secondary: #f5f5f7;
-      --bg-dark: #1a1a2e;
-      --bg-accent: #003366;
-      --text-primary: #1a1a1a;
-      --text-secondary: #4a4a4a;
-      --text-muted: #7a7a7a;
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-dark: #050508;
+      --bg-glass: rgba(255,255,255,0.04);
+      --bg-glass-hover: rgba(255,255,255,0.08);
+
+      --text-primary: #e0e0f0;
+      --text-secondary: #b0b0c0;
+      --text-muted: #6a6a80;
       --text-on-dark: #ffffff;
-      --accent-1: #0066cc;
-      --accent-2: #00a86b;
-      --accent-3: #ff6b35;
-      --accent-4: #7c3aed;
-      --font-display: 'Space Grotestesk', sans-serif;
+
+      --accent-1: #00cc33;
+      --accent-2: #00b4e6;
+      --accent-3: #9333ea;
+      --accent-4: #ff6b35;
+      --accent-cyan: #00ffff;
+
+      --font-display: 'Space Grotesk', sans-serif;
       --font-body: 'Inter', -apple-system, sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
+      --font-mono: 'Fira Code', 'JetBrains Mono', monospace;
+
       --size-stat-hero: clamp(6rem, 15vw, 14rem);
       --size-stat: clamp(4rem, 10vw, 8rem);
       --size-impact-hero: clamp(4rem, 12vw, 7rem);
       --size-impact: clamp(3rem, 8vw, 5rem);
-      --size-h1: clamp(6rem, 8vw, 9rem);
-      --size-h2: clamp(4rem, 12vw, 7rem);
-      --size-h3: clamp(1.75rem, 3.5vw, 3rem);
-      --size-h4: clamp(1.5rem, 2.5vw, 2rem);
-      --size-body: clamp(1.25rem, 2vw, 2rem);
-      --size-body-lg: clamp(1.5rem, 2.5vw, 2.25rem);
-      --size-body-xl: clamp(2.5rem, 3vw, 3.5rem);
-      --size-small: clamp(1rem, 1.25vw, 1.25rem);
-      --size-label: clamp(1.5rem, 2.5vw, 2.25rem);
+      --size-h1: clamp(5rem, 7vw, 8rem);
+      --size-h2: clamp(3rem, 5vw, 5rem);
+      --size-h3: clamp(1.5rem, 3vw, 2.5rem);
+      --size-h4: clamp(1.3rem, 2vw, 1.8rem);
+      --size-body: clamp(1.1rem, 1.8vw, 1.6rem);
+      --size-body-lg: clamp(1.3rem, 2.2vw, 2rem);
+      --size-body-xl: clamp(2rem, 2.8vw, 3rem);
+      --size-small: clamp(0.9rem, 1.1vw, 1.1rem);
+      --size-label: clamp(1rem, 1.5vw, 1.4rem);
+
       --space-xs: 0.5rem;
       --space-sm: 1rem;
       --space-md: 2rem;
       --space-lg: 3rem;
       --space-xl: 4rem;
+
       --bar-width: 120px;
-      --bar-height: 8px;
-      --card-radius: 8px;
-      --card-padding: 2rem;
-      --content-max-width: 1400px;
+      --bar-height: 4px;
+      --card-radius: 12px;
+      --card-padding: 1.8rem;
       --slide-padding: 60px;
     }
 
-    .reveal { font-family: var(--font-body); font-weight: 400; color: var(--text-primary); }
+    .reveal { font-family: var(--font-body); font-weight: 400; color: var(--text-primary); background: var(--bg-primary); }
     .reveal .slides section { text-align: left; padding: var(--slide-padding); box-sizing: border-box; }
     .reveal .slides section.centered { text-align: center; }
-    .reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: var(--font-display); font-weight: 700; color: var(--text-primary); text-transform: none; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 0.5em 0; }
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: var(--font-display); font-weight: 700; color: var(--text-on-dark); text-transform: none; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 0.5em 0; }
     .reveal h1 { font-size: var(--size-h1); }
-    .reveal h2 { font-size: var(--size-h2); }
+    .reveal h2 { font-size: var(--size-h2); color: var(--accent-cyan); }
     .reveal h3 { font-size: var(--size-h3); }
-    .reveal h4 { font-size: var(--size-h4); }
-    .reveal p { font-size: var(--size-body); line-height: 1.5; margin: 0 0 1em 0; }
+    .reveal h4 { font-size: var(--size-h4); color: var(--accent-2); }
+    .reveal p { font-size: var(--size-body); line-height: 1.6; margin: 0 0 1em 0; color: var(--text-secondary); }
     .reveal ul, .reveal ol { margin: 0; padding: 0; list-style-position: outside; margin-left: 1.5em; }
-    .reveal li { margin-bottom: 0.5em; line-height: 1.4; font-size: var(--size-body); }
-    .reveal .label { font-family: var(--font-mono); font-size: var(--size-label); font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-1); margin-bottom: 0; }
+    .reveal li { margin-bottom: 0.5em; line-height: 1.5; font-size: var(--size-body); color: var(--text-secondary); }
+
+    .reveal .label { font-family: var(--font-mono); font-size: var(--size-label); font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-cyan); margin-bottom: 0; }
     .reveal .lead { font-size: var(--size-body-xl); color: var(--text-secondary); }
+
     .reveal .stat { font-family: var(--font-mono); font-size: var(--size-stat); font-weight: 700; line-height: 1; color: var(--accent-1); margin-bottom: 0; }
-    .reveal .stat-hero { font-family: var(--font-mono); font-size: var(--size-stat-hero); font-weight: 700; line-height: 0.9; color: var(--accent-1); margin-bottom: 0; }
+    .reveal .stat-hero { font-family: var(--font-mono); font-size: var(--size-stat-hero); font-weight: 700; line-height: 0.9; color: var(--accent-cyan); margin-bottom: 0; text-shadow: 0 0 30px rgba(0,255,255,0.4); }
     .reveal .stat-label { font-size: var(--size-body-lg); font-weight: 500; color: var(--text-secondary); margin-top: var(--space-sm); }
-    .reveal .impact { font-size: var(--size-impact); font-weight: 700; line-height: 1.1; }
-    .reveal .impact-hero { font-size: var(--size-impact-hero); font-weight: 700; line-height: 1.05; }
-    .bar { width: var(--bar-width); height: var(--bar-height); background: var(--accent-1); margin-bottom: var(--space-md); }
+
+    .reveal .impact { font-size: var(--size-impact); font-weight: 700; line-height: 1.15; color: var(--text-on-dark); }
+    .reveal .impact-hero { font-size: var(--size-impact-hero); font-weight: 700; line-height: 1.05; color: var(--text-on-dark); }
+
+    .bar { width: var(--bar-width); height: var(--bar-height); background: var(--accent-1); margin-bottom: var(--space-md); border-radius: 2px; }
     .centered .bar { margin-left: auto; margin-right: auto; }
     .bar-accent-2 { background: var(--accent-2); }
     .bar-accent-3 { background: var(--accent-3); }
     .bar-accent-4 { background: var(--accent-4); }
+    .bar-cyan { background: var(--accent-cyan); box-shadow: 0 0 15px rgba(0,255,255,0.5); }
+
     .reveal .text-on-dark { color: var(--text-on-dark); }
     .reveal .text-muted { color: var(--text-muted); }
     .reveal .text-secondary { color: var(--text-secondary); }
@@ -85,127 +98,227 @@
     .reveal .text-accent-2 { color: var(--accent-2); }
     .reveal .text-accent-3 { color: var(--accent-3); }
     .reveal .text-accent-4 { color: var(--accent-4); }
+    .reveal .text-cyan { color: var(--accent-cyan); }
+
     .reveal .highlight-1 { color: var(--accent-1); font-weight: 600; }
     .reveal .highlight-2 { color: var(--accent-2); font-weight: 600; }
     .reveal .highlight-3 { color: var(--accent-3); font-weight: 600; }
     .reveal .highlight-4 { color: var(--accent-4); font-weight: 600; }
+    .reveal .highlight-cyan { color: var(--accent-cyan); font-weight: 600; text-shadow: 0 0 10px rgba(0,255,255,0.3); }
+
     .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); }
-    .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-sm); }
-    .card { background: var(--bg-secondary); border-radius: var(--card-radius); padding: var(--card-padding); border-left: 4px solid var(--accent-1); }
-    .card-accent-2 { border-left-color: var(--accent-2); }
-    .card-accent-3 { border-left-color: var(--accent-3); }
-    .card-accent-4 { border-left-color: var(--accent-4); }
-    .card h3 { font-size: var(--size-h4); margin-bottom: var(--space-xs); }
+
+    .card {
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--card-radius);
+      padding: var(--card-padding);
+      transition: all 0.3s ease;
+    }
+    .card:hover { background: var(--bg-glass-hover); border-color: rgba(255,255,255,0.15); }
+    .card-glow { border-color: rgba(0,255,255,0.3); box-shadow: 0 0 20px rgba(0,255,255,0.1); }
+    .card-accent-1 { border-left: 3px solid var(--accent-1); }
+    .card-accent-2 { border-left: 3px solid var(--accent-2); }
+    .card-accent-3 { border-left: 3px solid var(--accent-3); }
+    .card-accent-4 { border-left: 3px solid var(--accent-4); }
+    .card h3 { font-size: var(--size-h4); margin-bottom: var(--space-xs); color: var(--text-on-dark); }
     .card p { font-size: var(--size-body); color: var(--text-secondary); margin: 0; }
-    .reveal pre { font-family: var(--font-mono); font-size: var(--size-small); background: var(--bg-dark); color: var(--text-on-dark); padding: var(--space-md); border-radius: var(--card-radius); text-align: left; width: 100%; box-sizing: border-box; }
-    .reveal pre code { font-family: inherit; line-height: 1.6; }
+
+    .reveal pre {
+      font-family: var(--font-mono);
+      font-size: var(--size-small);
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(0,255,255,0.15);
+      color: var(--accent-cyan);
+      padding: var(--space-md);
+      border-radius: var(--card-radius);
+      text-align: left;
+      width: 100%;
+      box-sizing: border-box;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    .reveal pre code { font-family: inherit; line-height: 1.6; color: var(--text-on-dark); }
+
     .process-flow { display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; }
     .process-step { text-align: center; }
-    .process-node { width: 80px; height: 80px; border-radius: 50%; margin: 0 auto var(--space-xs); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.5rem; }
-    .process-arrow { font-size: 2rem; color: var(--text-muted); }
-    .process-label { font-size: var(--size-body); font-weight: 500; }
-    .slide-footer { position: fixed; bottom: 30px; left: var(--slide-padding); font-size: var(--size-label); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); z-index: 1000; }
-    .tag { display: inline-block; background: var(--accent-1); color: white; padding: 0.2em 0.6em; border-radius: 4px; font-size: 0.7em; font-weight: 600; margin: 0 0.2em; vertical-align: middle; }
-    .tag-green { background: var(--accent-2); }
-    .tag-orange { background: var(--accent-3); }
-    .tag-purple { background: var(--accent-4); }
-    .tool-badge { display: inline-flex; align-items: center; gap: 0.3em; background: var(--bg-secondary); border: 1px solid var(--accent-1); border-radius: 20px; padding: 0.3em 0.8em; font-size: 0.8em; font-weight: 600; margin: 0.15em; }
-    .icon-wrap { width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-sm); }
-    .solid-letter { font-size: 4rem; font-weight: 900; font-family: var(--font-mono); line-height: 1; }
-    .timeline-item { position: relative; padding-left: 2rem; border-left: 3px solid var(--accent-1); padding-bottom: var(--space-md); }
-    .timeline-item h4 { margin-bottom: var(--space-xs); }
+    .process-node {
+      width: 70px; height: 70px; border-radius: 50%;
+      margin: 0 auto var(--space-xs);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 700; font-size: 1.2rem;
+      font-family: var(--font-mono);
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    .process-arrow { font-size: 1.5rem; color: var(--accent-cyan); }
+    .process-label { font-size: var(--size-body); font-weight: 500; color: var(--text-secondary); }
+
+    .slide-footer {
+      position: fixed; bottom: 30px; left: var(--slide-padding);
+      font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-muted); z-index: 1000;
+    }
+
+    .tag { display: inline-block; background: var(--accent-1); color: white; padding: 0.15em 0.5em; border-radius: 4px; font-size: 0.65em; font-weight: 600; font-family: var(--font-mono); margin: 0 0.15em; vertical-align: middle; }
+    .tag-cyan { background: var(--accent-2); }
+    .tag-purple { background: var(--accent-3); }
+    .tag-orange { background: var(--accent-4); }
+
+    .tool-badge {
+      display: inline-flex; align-items: center; gap: 0.3em;
+      background: var(--bg-glass); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px; padding: 0.3em 0.7em;
+      font-size: 0.75em; font-weight: 500; margin: 0.1em;
+      color: var(--text-secondary);
+    }
+
+    .solid-letter { font-size: 3.5rem; font-weight: 900; font-family: var(--font-mono); line-height: 1; }
+
+    .timeline-item { position: relative; padding-left: 1.5rem; border-left: 2px solid var(--accent-cyan); padding-bottom: var(--space-md); }
+    .timeline-item h4 { margin-bottom: var(--space-xs); color: var(--accent-cyan); }
     .timeline-item p { margin: 0; font-size: var(--size-small); }
+
+    /* Glow effect for title slide */
+    .glow-text {
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 20px rgba(0,204,51,0.3));
+    }
+
+    .glow-border {
+      border: 1px solid rgba(0,255,255,0.2);
+      box-shadow: 0 0 30px rgba(0,255,255,0.05);
+    }
+
+    /* Particles background */
+    .reveal .slides::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at 20% 80%, rgba(0,204,51,0.03) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(0,180,230,0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
   </style>
 </head>
 <body>
-  <div class="slide-footer">SDD + OpenCode + Gentle AI</div>
+  <div class="slide-footer">statick88 · Desarrollo asistido por IA</div>
 
   <div class="reveal">
     <div class="slides">
 
       <!-- ============================================================ -->
-      <!-- SECCION 1: APERTURA -->
+      <!-- SLIDE 1: PORTADA — DATOS PERSONALES -->
       <!-- ============================================================ -->
 
-      <section class="centered">
-        <p class="label">Spec-Driven Development</p>
-        <h1>Hola Mundo</h1>
-        <div class="bar"></div>
-        <p class="lead">De la idea al emulador con IA</p>
+      <section class="centered" data-background-color="#0a0a0f">
+        <p class="label" style="font-size: 1rem; letter-spacing: 0.3em; margin-bottom: 2rem;">CHARLA TECNICA</p>
+        <h1 style="font-size: clamp(3rem, 6vw, 6rem); margin-bottom: 1rem;">
+          <span class="glow-text">Desarrollo asistido por IA</span>
+        </h1>
+        <div class="bar bar-cyan" style="width: 200px; margin: 2rem auto;"></div>
+        <div style="margin-top: 2rem;">
+          <p style="font-size: clamp(1.5rem, 2.5vw, 2.2rem); color: var(--text-on-dark); margin-bottom: 0.5rem; font-weight: 600;">Diego Medardo Saavedra Garcia</p>
+          <p style="font-size: clamp(1rem, 1.5vw, 1.3rem); color: var(--accent-cyan); font-family: var(--font-mono); letter-spacing: 0.05em;">FullStack Developer & Cybersecurity Consultant</p>
+        </div>
+        <div style="margin-top: 3rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+          <div style="text-align: center;">
+            <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem;">GITHUB</p>
+            <p style="font-size: 1rem; color: var(--accent-2);">github.com/statick88</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem;">LINKEDIN</p>
+            <p style="font-size: 1rem; color: var(--accent-2);">linkedin.com/in/dsaavedra88</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem;">EMAIL</p>
+            <p style="font-size: 1rem; color: var(--accent-2);">dsaavedra88@gmail.com</p>
+          </div>
+        </div>
+        <div style="margin-top: 2rem;">
+          <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">
+            10+ anios construyendo software seguro · MSc Ciberseguridad UCM · 100+ repos publicos
+          </p>
+        </div>
       </section>
 
-      <section class="centered" data-background-color="var(--bg-dark)">
-        <h1 class="text-on-dark">El Panorama</h1>
-        <div class="bar bar-accent-3"></div>
-        <p class="text-on-dark" style="opacity: 0.8;">Herramientas de IA para desarrollo</p>
-      </section>
+      <!-- ============================================================ -->
+      <!-- SECCION 2: EL PANORAMA -->
+      <!-- ============================================================ -->
 
-      <!-- ============================================================ -->
-      <!-- SECCION 2: HERRAMIENTAS DE IA -->
-      <!-- ============================================================ -->
+      <section class="centered" data-background-color="#0a0a0f">
+        <h1 class="text-on-dark" style="font-size: clamp(3rem, 5vw, 5rem);">El Panorama</h1>
+        <div class="bar bar-cyan"></div>
+        <p class="text-on-dark" style="opacity: 0.7;">Herramientas de IA para desarrollo de software</p>
+      </section>
 
       <section>
         <h2>Herramientas de IA para Coding</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-3" style="margin-top: var(--space-lg);">
-          <div class="card">
+          <div class="card card-glow">
             <h3>OpenCode</h3>
             <p>Terminal-first. Subagentes, SDD, multi-modelo. <span class="tag">OSS</span></p>
           </div>
           <div class="card card-accent-2">
             <h3>Claude Code</h3>
-            <p>Anthropic. CLI nativo, herramientas de archivos, MCP. <span class="tag tag-green">CLI</span></p>
+            <p>Anthropic. CLI nativo, herramientas de archivos, MCP. <span class="tag tag-cyan">CLI</span></p>
           </div>
           <div class="card card-accent-3">
             <h3>GitHub Copilot</h3>
-            <p>VS Code / JetBrains. Autocomplete, chat, agent mode. <span class="tag tag-orange">IDE</span></p>
+            <p>VS Code / JetBrains. Autocomplete, chat, agent mode. <span class="tag tag-purple">IDE</span></p>
           </div>
           <div class="card card-accent-4">
             <h3>Kilo Code</h3>
-            <p>Fork de Cline. Multi-modelo, autonomous coding. <span class="tag tag-purple">OSS</span></p>
+            <p>Fork de Cline. Multi-modelo, autonomous coding. <span class="tag tag-orange">OSS</span></p>
           </div>
-          <div class="card">
+          <div class="card card-accent-1">
             <h3>Codex (OpenAI)</h3>
             <p>Cloud agent. Ejecuta tareas en sandbox. <span class="tag">Cloud</span></p>
           </div>
           <div class="card card-accent-2">
             <h3>Amp Code</h3>
-            <p>Sourcegraph. Context-aware, codebase indexing. <span class="tag tag-green">IDE</span></p>
+            <p>Sourcegraph. Context-aware, codebase indexing. <span class="tag tag-cyan">IDE</span></p>
           </div>
           <div class="card card-accent-3">
             <h3>Kiro (AWS)</h3>
-            <p>Spec-driven. Steer-by-spec. <span class="tag tag-orange">Spec</span></p>
+            <p>Spec-driven. Steer-by-spec. <span class="tag tag-purple">Spec</span></p>
           </div>
           <div class="card card-accent-4">
             <h3>Pi Code</h3>
-            <p>Terminal. Minimal, rapido. <span class="tag tag-purple">CLI</span></p>
+            <p>Terminal. Minimal, rapido. <span class="tag tag-orange">CLI</span></p>
           </div>
         </div>
       </section>
 
       <section class="centered">
-        <p class="impact">OpenCode no es solo un <span class="highlight-1">editor</span>. Es un <span class="highlight-4">orquestador</span>.</p>
+        <p class="impact">OpenCode no es solo un <span class="highlight-3">editor</span>. Es un <span class="highlight-cyan">orquestador</span>.</p>
       </section>
 
       <!-- ============================================================ -->
       <!-- SECCION 3: GENTLE AI -->
       <!-- ============================================================ -->
 
-      <section class="centered" data-background-color="var(--accent-4)">
-        <h1 class="text-on-dark">Gentle AI</h1>
-        <div class="bar bar-accent-2"></div>
-        <p class="text-on-dark" style="opacity: 0.8;">El framework que hace magia detras de OpenCode.</p>
+      <section class="centered" data-background-color="#0a0a0f">
+        <h1 class="text-on-dark" style="font-size: clamp(3rem, 5vw, 5rem);">Gentle AI</h1>
+        <div class="bar bar-accent-3"></div>
+        <p class="text-on-dark" style="opacity: 0.7;">El framework que coordina la magia detras de OpenCode.</p>
       </section>
 
       <section>
         <h2>Que es Gentle AI?</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-2" style="margin-top: var(--space-lg);">
           <div>
             <p class="lead">Definicion</p>
-            <p>Un framework open-source que coordina <span class="highlight-1">subagentes especializados</span> para ejecutar el ciclo SDD completo dentro de OpenCode.</p>
+            <p>Un framework que coordina <span class="highlight-cyan">subagentes especializados</span> para ejecutar el ciclo SDD completo dentro de OpenCode.</p>
           </div>
           <div>
             <p class="lead">Componentes</p>
@@ -221,7 +334,7 @@
 
       <section>
         <h2>Instalacion de Gentle AI</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <pre><code># 1. Clonar el repositorio
 git clone https://github.com/gentle-ai/opencode.git
 
@@ -250,7 +363,7 @@ opencode --version</code></pre>
 
       <section>
         <h2>Configuracion — opencode.json</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <pre><code>{
   "provider": {
     "openrouter": {
@@ -273,10 +386,10 @@ opencode --version</code></pre>
 
       <section>
         <h2>Como Interactuan los Componentes</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="process-flow" style="margin-top: var(--space-lg);">
           <div class="process-step">
-            <div class="process-node" style="background: var(--accent-4);">U</div>
+            <div class="process-node" style="background: var(--accent-3);">U</div>
             <p class="process-label">Usuario</p>
           </div>
           <div class="process-arrow">→</div>
@@ -291,7 +404,7 @@ opencode --version</code></pre>
           </div>
           <div class="process-arrow">→</div>
           <div class="process-step">
-            <div class="process-node" style="background: var(--accent-3);">SA</div>
+            <div class="process-node" style="background: var(--accent-cyan);">SA</div>
             <p class="process-label">Subagentes</p>
           </div>
           <div class="process-arrow">→</div>
@@ -300,28 +413,28 @@ opencode --version</code></pre>
             <p class="process-label">Skills</p>
           </div>
         </div>
-        <p style="margin-top: var(--space-lg); text-align: center;"><span class="highlight-1">OpenCode</span> recibe el prompt → <span class="highlight-2">Gentle AI</span> orquesta → <span class="highlight-3">Subagentes</span> ejecutan con <span class="highlight-4">Skills</span></p>
+        <p style="margin-top: var(--space-lg); text-align: center;"><span class="highlight-1">OpenCode</span> recibe el prompt → <span class="highlight-2">Gentle AI</span> orquesta → <span class="highlight-cyan">Subagentes</span> ejecutan con <span class="highlight-4">Skills</span></p>
       </section>
 
       <!-- ============================================================ -->
       <!-- SECCION 4: AGENTES, SKILLS, MCP -->
       <!-- ============================================================ -->
 
-      <section class="centered" data-background-color="var(--bg-dark)">
-        <h1 class="text-on-dark">Agentes + Skills + MCP</h1>
-        <div class="bar"></div>
-        <p class="text-on-dark" style="opacity: 0.8;">Los tres pilares de Gentle AI.</p>
+      <section class="centered" data-background-color="#0a0a0f">
+        <h1 class="text-on-dark" style="font-size: clamp(3rem, 5vw, 5rem);">Agentes + Skills + MCP</h1>
+        <div class="bar bar-cyan"></div>
+        <p class="text-on-dark" style="opacity: 0.7;">Los tres pilares de Gentle AI.</p>
       </section>
 
       <section>
         <h2>agents.md — El Contrato</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-2" style="margin-top: var(--space-lg);">
           <div>
             <p class="lead">Que define</p>
             <ul>
               <li>Identidad y personalidad</li>
-              <li>Perfiles disponibles (statick, facilitator...)</li>
+              <li>Perfiles disponibles</li>
               <li>Reglas de comportamiento</li>
               <li>Workflow SDD integrado</li>
               <li>Quality gates obligatorios</li>
@@ -348,11 +461,11 @@ opencode --version</code></pre>
 
       <section>
         <h2>Skills — Instrucciones Reutilizables</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-2" style="margin-top: var(--space-lg);">
           <div>
             <p class="lead">Que es un Skill</p>
-            <p>Un archivo <code>SKILL.md</code> que contiene instrucciones especializadas para un contexto especifico. Se cargan automaticamente cuando el task matchea.</p>
+            <p>Un archivo <code style="color: var(--accent-cyan);">SKILL.md</code> con instrucciones especializadas. Se cargan automaticamente cuando el task matchea.</p>
           </div>
           <div>
             <pre><code># skills/ui-ux-pro-max/SKILL.md
@@ -369,15 +482,15 @@ triggers:
 ## Quick Reference
 1. Search design tokens
 2. Apply 8pt grid
-3. Check contrast ≥4.5:1
-4. Verify touch targets ≥44pt</code></pre>
+3. Check contrast >= 4.5:1
+4. Verify touch targets >= 44pt</code></pre>
           </div>
         </div>
       </section>
 
       <section>
         <h2>MCP — Model Context Protocol</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-2" style="margin-top: var(--space-lg);">
           <div>
             <p class="lead">Que es MCP</p>
@@ -404,9 +517,9 @@ triggers:
 
       <section>
         <h2>Engram — Memoria Persistente</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-3" style="margin-top: var(--space-lg);">
-          <div class="card">
+          <div class="card card-glow">
             <h3>mem_save</h3>
             <p>Guarda decisiones, bugs, patrones descubiertos</p>
           </div>
@@ -425,10 +538,10 @@ triggers:
       <!-- SECCION 5: SDD -->
       <!-- ============================================================ -->
 
-      <section class="centered" data-background-color="var(--accent-1)">
-        <h1 class="text-on-dark">SDD</h1>
-        <div class="bar bar-accent-2"></div>
-        <p class="text-on-dark" style="opacity: 0.8;">Spec-Driven Development</p>
+      <section class="centered" data-background-color="#0a0a0f">
+        <h1 class="text-on-dark" style="font-size: clamp(3rem, 5vw, 5rem);">SDD</h1>
+        <div class="bar bar-cyan"></div>
+        <p class="text-on-dark" style="opacity: 0.7;">Spec-Driven Development</p>
       </section>
 
       <section class="centered">
@@ -437,7 +550,7 @@ triggers:
 
       <section>
         <h2>El Flujo SDD Completo</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="process-flow" style="margin-top: var(--space-lg);">
           <div class="process-step">
             <div class="process-node" style="background: var(--accent-1);">HU</div>
@@ -455,17 +568,17 @@ triggers:
           </div>
           <div class="process-arrow">→</div>
           <div class="process-step">
-            <div class="process-node" style="background: var(--accent-4);">Tasks</div>
+            <div class="process-node" style="background: var(--accent-cyan);">Tasks</div>
             <p class="process-label">Tareas</p>
           </div>
           <div class="process-arrow">→</div>
           <div class="process-step">
-            <div class="process-node" style="background: var(--accent-1);">Apply</div>
+            <div class="process-node" style="background: var(--accent-4);">Apply</div>
             <p class="process-label">Codigo</p>
           </div>
           <div class="process-arrow">→</div>
           <div class="process-step">
-            <div class="process-node" style="background: var(--accent-2);">Verify</div>
+            <div class="process-node" style="background: var(--accent-1);">Verify</div>
             <p class="process-label">Gates</p>
           </div>
           <div class="process-arrow">→</div>
@@ -478,11 +591,11 @@ triggers:
 
       <section>
         <h2>Preflight — Antes de Empezar</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-2" style="margin-top: var(--space-lg);">
-          <div class="card">
+          <div class="card card-glow">
             <h3>Ritmo (Pace)</h3>
-            <p><span class="highlight-1">Interactive</span> — pausa entre fases<br><span class="highlight-2">Automatico</span> — ejecuta sin pausa</p>
+            <p><span class="highlight-1">Interactive</span> — pausa entre fases<br><span class="highlight-cyan">Automatico</span> — ejecuta sin pausa</p>
           </div>
           <div class="card card-accent-2">
             <h3>Artefactos</h3>
@@ -490,20 +603,20 @@ triggers:
           </div>
           <div class="card card-accent-3">
             <h3>PRs</h3>
-            <p><span class="highlight-1">Ask-always</span> — preguntar antes de PR<br><span class="highlight-2">Auto-forecast</span> — decidir segun tamano</p>
+            <p><span class="highlight-1">Ask-always</span> — preguntar antes de PR<br><span class="highlight-cyan">Auto-forecast</span> — decidir segun tamano</p>
           </div>
           <div class="card card-accent-4">
             <h3>Revision</h3>
-            <p><span class="highlight-1">400 lineas</span> — budget estandar<br><span class="highlight-2">800 lineas</span> — permisivo</p>
+            <p><span class="highlight-1">400 lineas</span> — budget estandar<br><span class="highlight-4">800 lineas</span> — permisivo</p>
           </div>
         </div>
       </section>
 
       <section>
         <h2>Subagentes por Fase</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-3" style="margin-top: var(--space-lg);">
-          <div class="card">
+          <div class="card card-glow">
             <h3>sdd-explore</h3>
             <p>Analiza el codebase y propone la HU</p>
           </div>
@@ -519,7 +632,7 @@ triggers:
             <h3>sdd-tasks</h3>
             <p>Divide en tareas implementables + forecast</p>
           </div>
-          <div class="card">
+          <div class="card card-accent-1">
             <h3>sdd-apply</h3>
             <p>TDD: tests primero, luego codigo</p>
           </div>
@@ -534,32 +647,32 @@ triggers:
       <!-- SECCION 6: CLEAN ARCHITECTURE -->
       <!-- ============================================================ -->
 
-      <section class="centered" data-background-color="var(--accent-2)">
-        <h1 class="text-on-dark">Clean Architecture</h1>
-        <div class="bar"></div>
-        <p class="text-on-dark" style="opacity: 0.8;">Capas, dependencias, y separacion.</p>
+      <section class="centered" data-background-color="#0a0a0f">
+        <h1 class="text-on-dark" style="font-size: clamp(3rem, 5vw, 5rem);">Clean Architecture</h1>
+        <div class="bar bar-accent-2"></div>
+        <p class="text-on-dark" style="opacity: 0.7;">Capas, dependencias, y separacion.</p>
       </section>
 
       <section>
         <h2>Las 3 Capas</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-3" style="margin-top: var(--space-lg);">
-          <div class="card" style="text-align: center;">
-            <div class="icon-wrap" style="background: var(--accent-1);">
+          <div class="card card-glow" style="text-align: center;">
+            <div class="process-node" style="background: var(--accent-1); margin: 0 auto var(--space-sm);">
               <span class="solid-letter text-on-dark">D</span>
             </div>
             <h3>Domain</h3>
             <p>Entidades puras, interfaces de repositorios. Sin dependencias externas.</p>
           </div>
           <div class="card card-accent-2" style="text-align: center;">
-            <div class="icon-wrap" style="background: var(--accent-2);">
+            <div class="process-node" style="background: var(--accent-2); margin: 0 auto var(--space-sm);">
               <span class="solid-letter text-on-dark">Da</span>
             </div>
             <h3>Data</h3>
             <p>Implementaciones, APIs, bases de datos. Implementa las interfaces de Domain.</p>
           </div>
           <div class="card card-accent-3" style="text-align: center;">
-            <div class="icon-wrap" style="background: var(--accent-3);">
+            <div class="process-node" style="background: var(--accent-3); margin: 0 auto var(--space-sm);">
               <span class="solid-letter text-on-dark">P</span>
             </div>
             <h3>Presentation</h3>
@@ -570,7 +683,7 @@ triggers:
 
       <section>
         <h2>Estructura en Codigo</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <pre><code>lib/
 ├── domain/                    # DOMINIO (negocio puro)
 │   ├── entities/
@@ -599,10 +712,10 @@ triggers:
       <!-- SECCION 7: SOLID -->
       <!-- ============================================================ -->
 
-      <section class="centered" data-background-color="var(--accent-3)">
-        <h1 class="text-on-dark">SOLID</h1>
-        <div class="bar"></div>
-        <p class="text-on-dark" style="opacity: 0.8;">5 principios, 5 letras, 1 objetivo.</p>
+      <section class="centered" data-background-color="#0a0a0f">
+        <h1 class="text-on-dark" style="font-size: clamp(3rem, 5vw, 5rem);">SOLID</h1>
+        <div class="bar bar-accent-3"></div>
+        <p class="text-on-dark" style="opacity: 0.7;">5 principios, 5 letras, 1 objetivo.</p>
       </section>
 
       <section>
@@ -610,8 +723,8 @@ triggers:
         <div class="bar bar-accent-3"></div>
         <div class="grid-2" style="margin-top: var(--space-lg);">
           <div>
-            <p class="impact text-accent-3">Una clase, una razon para cambiar.</p>
-            <p>Cada modulo hace <strong>una sola cosa</strong>. Si cambian dos cosas juntas, estan mal separadas.</p>
+            <p class="impact text-accent-1">Una clase, una razon para cambiar.</p>
+            <p>Cada modulo hace <strong style="color: var(--text-on-dark);">una sola cosa</strong>. Si cambian dos cosas juntas, estan mal separadas.</p>
           </div>
           <div>
             <pre><code>// MALO: hace todo
@@ -640,8 +753,8 @@ class EmailService {
         <div class="bar bar-accent-3"></div>
         <div class="grid-2" style="margin-top: var(--space-lg);">
           <div>
-            <p class="impact text-accent-3">Abierto para extension, cerrado para modificacion.</p>
-            <p>Agrega comportamiento sin tocar el codigo existente. Usa interfaces y composicion.</p>
+            <p class="impact text-accent-2">Abierto para extension, cerrado para modificacion.</p>
+            <p>Agrega comportamiento sin tocar el codigo existente.</p>
           </div>
           <div>
             <pre><code>// MALO: modifcar para agregar
@@ -658,9 +771,6 @@ abstract class Discount {
 }
 class VipDiscount implements Discount {
   apply(price) => price * 0.8;
-}
-class NormalDiscount implements Discount {
-  apply(price) => price * 0.9;
 }</code></pre>
           </div>
         </div>
@@ -672,7 +782,7 @@ class NormalDiscount implements Discount {
         <div class="grid-2" style="margin-top: var(--space-lg);">
           <div>
             <p class="impact text-accent-3">Subtipos deben ser sustituibles por sus tipos base.</p>
-            <p>Si B es subtipo de A, entonces donde esperas A, debe funcionar con B sin romper nada.</p>
+            <p>Si B es subtipo de A, debe funcionar sin romper nada.</p>
           </div>
           <div>
             <pre><code>// MALO: rompe el contrato
@@ -702,8 +812,8 @@ class SwimmingBird extends Bird {
         <div class="bar bar-accent-3"></div>
         <div class="grid-2" style="margin-top: var(--space-lg);">
           <div>
-            <p class="impact text-accent-3">Ningun cliente debe depender de metodos que no usa.</p>
-            <p>Interfaces pequeñas y especificas. No una gigante que haga todo.</p>
+            <p class="impact text-accent-4">Ningun cliente debe depender de metodos que no usa.</p>
+            <p>Interfaces pequenas y especificas.</p>
           </div>
           <div>
             <pre><code>// MALO: interfaz gigante
@@ -714,12 +824,8 @@ interface Worker {
 }
 
 // BUENO: interfaces segregadas
-interface Workable {
-  work();
-}
-interface Eatable {
-  eat();
-}
+interface Workable { work(); }
+interface Eatable { eat(); }
 class Robot implements Workable {
   work() { }
 }
@@ -736,8 +842,8 @@ class Human implements Workable, Eatable {
         <div class="bar bar-accent-3"></div>
         <div class="grid-2" style="margin-top: var(--space-lg);">
           <div>
-            <p class="impact text-accent-3">Depende de abstracciones, no de concreciones.</p>
-            <p>Los modulos de alto nivel no deben depender de los de bajo nivel. Ambos dependen de interfaces.</p>
+            <p class="impact text-cyan">Depende de abstracciones, no de concreciones.</p>
+            <p>Los modulos de alto nivel no deben depender de los de bajo nivel.</p>
           </div>
           <div>
             <pre><code>// MALO: dependencia concreta
@@ -761,39 +867,39 @@ class UserRepository {
       <!-- SECCION 8: CLEAN CODE -->
       <!-- ============================================================ -->
 
-      <section class="centered" data-background-color="var(--bg-dark)">
-        <h1 class="text-on-dark">Clean Code</h1>
+      <section class="centered" data-background-color="#0a0a0f">
+        <h1 class="text-on-dark" style="font-size: clamp(3rem, 5vw, 5rem);">Clean Code</h1>
         <div class="bar bar-accent-2"></div>
-        <p class="text-on-dark" style="opacity: 0.8;">Codigo que se lee como prosa.</p>
+        <p class="text-on-dark" style="opacity: 0.7;">Codigo que se lee como prosa.</p>
       </section>
 
       <section>
         <h2>Principios de Clean Code</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-2" style="margin-top: var(--space-lg);">
-          <div class="card">
+          <div class="card card-glow">
             <h3>Nombres claros</h3>
-            <p><code>d</code> → <code>daysUntilExpiration</code><br>Que hace, no como lo hace</p>
+            <p><code style="color: var(--accent-cyan);">d</code> → <code style="color: var(--accent-1);">daysUntilExpiration</code><br>Que hace, no como lo hace</p>
           </div>
           <div class="card card-accent-2">
             <h3>Funciones pequenas</h3>
-            <p>Una funcion = una accion. Max 20 lineas. Sin parametros de 3+.</p>
+            <p>Una funcion = una accion. Max 20 lineas.</p>
           </div>
           <div class="card card-accent-3">
             <h3>Comentarios</h3>
-            <p>No expliques QUE, explica POR QUE. Si necesitas explicar QUE, renombra.</p>
+            <p>No expliques QUE, explica POR QUE.</p>
           </div>
           <div class="card card-accent-4">
             <h3>Sin magic numbers</h3>
-            <p><code>if (status == 2)</code> → <code>if (status == StatusActive)</code></p>
+            <p><code style="color: var(--accent-4);">if (status == 2)</code> → <code style="color: var(--accent-1);">if (status == StatusActive)</code></p>
           </div>
-          <div class="card">
+          <div class="card card-accent-1">
             <h3>Error handling</h3>
-            <p>Nunca vacios. Usa exceptions tipadas. Log con contexto.</p>
+            <p>Nunca vacios. Usa exceptions tipadas.</p>
           </div>
           <div class="card card-accent-2">
             <h3>DRY</h3>
-            <p>Don't Repeat Yourself. Pero no prematuramente — esperar a 3 repeticiones.</p>
+            <p>Don't Repeat Yourself. Esperar a 3 repeticiones.</p>
           </div>
         </div>
       </section>
@@ -802,31 +908,31 @@ class UserRepository {
       <!-- SECCION 9: TDD -->
       <!-- ============================================================ -->
 
-      <section class="centered" data-background-color="var(--accent-2)">
-        <h1 class="text-on-dark">TDD</h1>
-        <div class="bar"></div>
-        <p class="text-on-dark" style="opacity: 0.8;">Test-Driven Development</p>
+      <section class="centered" data-background-color="#0a0a0f">
+        <h1 class="text-on-dark" style="font-size: clamp(3rem, 5vw, 5rem);">TDD</h1>
+        <div class="bar bar-accent-2"></div>
+        <p class="text-on-dark" style="opacity: 0.7;">Test-Driven Development</p>
       </section>
 
       <section>
         <h2>Red → Green → Refactor</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="process-flow" style="margin-top: var(--space-lg);">
           <div class="process-step">
-            <div class="process-node" style="background: #e74c3c;">R</div>
-            <p class="process-label" style="color: #e74c3c; font-weight: 700;">RED</p>
+            <div class="process-node" style="background: #ef4444; box-shadow: 0 0 20px rgba(239,68,68,0.4);">R</div>
+            <p class="process-label" style="color: #ef4444; font-weight: 700;">RED</p>
             <p class="process-label">Escribir test que falla</p>
           </div>
           <div class="process-arrow">→</div>
           <div class="process-step">
-            <div class="process-node" style="background: var(--accent-2);">G</div>
-            <p class="process-label" style="color: var(--accent-2); font-weight: 700;">GREEN</p>
+            <div class="process-node" style="background: var(--accent-1); box-shadow: 0 0 20px rgba(0,204,51,0.4);">G</div>
+            <p class="process-label" style="color: var(--accent-1); font-weight: 700;">GREEN</p>
             <p class="process-label">Implementar minimo para pasar</p>
           </div>
           <div class="process-arrow">→</div>
           <div class="process-step">
-            <div class="process-node" style="background: var(--accent-1);">Re</div>
-            <p class="process-label" style="color: var(--accent-1); font-weight: 700;">REFACTOR</p>
+            <div class="process-node" style="background: var(--accent-cyan); box-shadow: 0 0 20px rgba(0,255,255,0.4);">Re</div>
+            <p class="process-label" style="color: var(--accent-cyan); font-weight: 700;">REFACTOR</p>
             <p class="process-label">Limpiar sin cambiar comportamiento</p>
           </div>
         </div>
@@ -834,7 +940,7 @@ class UserRepository {
 
       <section>
         <h2>TDD en Flutter — Ejemplo</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <pre><code>// RED: test que falla
 test('should return default greeting', () async {
   final repo = GreetingRepositoryImpl();
@@ -851,41 +957,43 @@ class GreetingRepositoryImpl implements GreetingRepository {
 }
 
 // REFACTOR: limpiar
-// (ya esta limpio — no hay nada que refactorizar)</code></pre>
+// (ya esta limpio)</code></pre>
       </section>
 
       <section class="centered">
-        <p class="impact">TDD no es sobre <span class="highlight-3">tests</span>. Es sobre <span class="highlight-1">diseno</span>.</p>
+        <p class="impact">TDD no es sobre <span class="highlight-3">tests</span>. Es sobre <span class="highlight-cyan">diseno</span>.</p>
       </section>
 
       <!-- ============================================================ -->
       <!-- SECCION 10: UI/UX -->
       <!-- ============================================================ -->
 
-      <section class="centered" data-background-color="var(--accent-4)">
-        <h1 class="text-on-dark">UI/UX</h1>
-        <div class="bar bar-accent-2"></div>
-        <p class="text-on-dark" style="opacity: 0.8;">Diseno que se siente bien.</p>
+      <section class="centered" data-background-color="#0a0a0f">
+        <h1 class="text-on-dark" style="font-size: clamp(3rem, 5vw, 5rem);">UI/UX</h1>
+        <div class="bar bar-accent-3"></div>
+        <p class="text-on-dark" style="opacity: 0.7;">Diseno que se siente bien.</p>
       </section>
 
       <section>
         <h2>Design Tokens</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-2" style="margin-top: var(--space-lg);">
           <div>
             <p class="lead">El sistema de diseno</p>
             <ul>
               <li><span class="highlight-1">Colores</span> — paleta coherente</li>
               <li><span class="highlight-2">Tipografia</span> — SF Pro / sistema</li>
-              <li><span class="highlight-3">Espaciado</span> — grid de 8pt</li>
-              <li><span class="highlight-4">Efectos</span> — glassmorphism, blur</li>
+              <li><span class="highlight-cyan">Espaciado</span> — grid de 8pt</li>
+              <li><span class="highlight-3">Efectos</span> — glassmorphism, blur</li>
             </ul>
           </div>
           <div>
             <pre><code>class AppColors {
-  static const primary = Color(0xFF6750A4);
-  static const surface = Color(0xFFFFFBFE);
-  static const glass = Color(0x40FFFFFF);
+  static const primary = Color(0xFF00CC33);
+  static const secondary = Color(0xFF00B4E6);
+  static const accent = Color(0xFF9333EA);
+  static const surface = Color(0xFF0A0A0F);
+  static const glass = Color(0x08FFFFFF);
 }
 
 class AppSpacing {
@@ -894,11 +1002,6 @@ class AppSpacing {
   static const double md = 16.0;
   static const double lg = 24.0;
   static const double xl = 32.0;
-}
-
-class AppEffects {
-  static const double glassBlur = 15.0;
-  static const double borderRadius = 12.0;
 }</code></pre>
           </div>
         </div>
@@ -906,9 +1009,9 @@ class AppEffects {
 
       <section>
         <h2>Reglas UI/UX Obligatorias</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-3" style="margin-top: var(--space-lg);">
-          <div class="card">
+          <div class="card card-glow">
             <h3>Touch Targets</h3>
             <p>Minimo <span class="highlight-1">44pt</span> para cualquier elemento interactivo</p>
           </div>
@@ -918,19 +1021,19 @@ class AppEffects {
           </div>
           <div class="card card-accent-3">
             <h3>Dark Mode</h3>
-            <p>Paridad total. Mismo contenido, mismas prioridades visuales</p>
+            <p>Paridad total. Mismo contenido, mismas prioridades</p>
           </div>
           <div class="card card-accent-4">
             <h3>Accessibility</h3>
             <p>Labels semanticos, reduced-motion, screen readers</p>
           </div>
-          <div class="card">
+          <div class="card card-accent-1">
             <h3>Glassmorphism</h3>
-            <p>Blur 10-20px, bordes sutiles, opacidad 0.1-0.25</p>
+            <p>Blur 10-20px, bordes sutiles, opacidad 0.04-0.08</p>
           </div>
           <div class="card card-accent-2">
             <h3>Grid 8pt</h3>
-            <p>Todos los espacios multiplos de 8: 8, 16, 24, 32, 48, 64</p>
+            <p>Todos los espacios multiplos de 8</p>
           </div>
         </div>
       </section>
@@ -939,18 +1042,18 @@ class AppEffects {
       <!-- SECCION 11: MODELOS UNCENSORED -->
       <!-- ============================================================ -->
 
-      <section class="centered" data-background-color="var(--bg-dark)">
-        <h1 class="text-on-dark">Modelos Uncensored</h1>
+      <section class="centered" data-background-color="#0a0a0f">
+        <h1 class="text-on-dark" style="font-size: clamp(3rem, 5vw, 5rem);">Modelos Uncensored</h1>
         <div class="bar bar-accent-3"></div>
-        <p class="text-on-dark" style="opacity: 0.8;">Hugging Face + alternativas sin filtro.</p>
+        <p class="text-on-dark" style="opacity: 0.7;">Hugging Face + alternativas sin filtro.</p>
       </section>
 
       <section>
         <h2>Modelos en Hugging Face</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-2" style="margin-top: var(--space-lg);">
           <div>
-            <p class="lead">Para Coding (uncensored)</p>
+            <p class="lead">Para Coding</p>
             <div style="margin-bottom: var(--space-sm);">
               <span class="tool-badge">🧠 DeepSeek-Coder-V2</span>
               <span class="tool-badge">🧠 CodeLlama-34B</span>
@@ -961,30 +1064,30 @@ class AppEffects {
             </div>
           </div>
           <div>
-            <p class="lead">Para General (uncensored)</p>
+            <p class="lead">Para General</p>
             <div style="margin-bottom: var(--space-sm);">
-              <span class="tool-badge tag-orange">🧠 Dolphin-2.2.1</span>
-              <span class="tool-badge tag-orange">🧠 Nous-Hermes-2</span>
-              <span class="tool-badge tag-orange">🧠 OpenHermes-2.5</span>
-              <span class="tool-badge tag-orange">🧠 Xwin-LM</span>
-              <span class="tool-badge tag-orange">🧠 Freud-Llama-2</span>
+              <span class="tool-badge">🧠 Dolphin-2.2.1</span>
+              <span class="tool-badge">🧠 Nous-Hermes-2</span>
+              <span class="tool-badge">🧠 OpenHermes-2.5</span>
+              <span class="tool-badge">🧠 Xwin-LM</span>
+              <span class="tool-badge">🧠 Freud-Llama-2</span>
             </div>
           </div>
         </div>
-        <p style="margin-top: var(--space-md);"><span class="highlight-3">Nota:</span> "Uncensored" significa sin RLHF de seguridad. Usar con responsabilidad y en contexto de investigacion.</p>
+        <p style="margin-top: var(--space-md);"><span class="highlight-3">Nota:</span> "Uncensored" significa sin RLHF de seguridad. Usar con responsabilidad.</p>
       </section>
 
       <section>
         <h2>Como se Comparan</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-2" style="margin-top: var(--space-lg);">
-          <div class="card">
+          <div class="card card-accent-1">
             <h3>Modelos Censurados</h3>
-            <p>GPT-4, Claude, Gemini<br><br><span class="highlight-2">Pros:</span> Seguros, confiables<br><span class="highlight-3">Contras:</span> Rechazan ciertas tareas</p>
+            <p>GPT-4, Claude, Gemini<br><br><span class="highlight-1">Pros:</span> Seguros, confiables<br><span class="highlight-3">Contras:</span> Rechazan ciertas tareas</p>
           </div>
           <div class="card card-accent-3">
             <h3>Modelos Uncensored</h3>
-            <p>Dolphin, Hermes, CodeLlama<br><br><span class="highlight-2">Pros:</span> Sin restricciones<br><span class="highlight-3">Contras:</span> Requieren mas contexto</p>
+            <p>Dolphin, Hermes, CodeLlama<br><br><span class="highlight-1">Pros:</span> Sin restricciones<br><span class="highlight-3">Contras:</span> Requieren mas contexto</p>
           </div>
         </div>
       </section>
@@ -993,22 +1096,22 @@ class AppEffects {
       <!-- SECCION 12: LA SESION HOLA MUNDO -->
       <!-- ============================================================ -->
 
-      <section class="centered" data-background-color="var(--accent-1)">
-        <h1 class="text-on-dark">La Sesion</h1>
-        <div class="bar bar-accent-2"></div>
-        <p class="text-on-dark" style="opacity: 0.8;">De 0 a "Hola Mundo" con el proceso completo.</p>
+      <section class="centered" data-background-color="#0a0a0f">
+        <h1 class="text-on-dark" style="font-size: clamp(3rem, 5vw, 5rem);">La Sesion</h1>
+        <div class="bar bar-cyan"></div>
+        <p class="text-on-dark" style="opacity: 0.7;">De 0 a "Hola Mundo" con el proceso completo.</p>
       </section>
 
       <section>
         <h2>Paso 1 — sdd-init</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-2" style="margin-top: var(--space-lg);">
           <div>
             <p class="lead">Que detecto</p>
             <ul>
               <li>Flutter 3.44.0 / Dart 3.12.0</li>
               <li>Pixel_10_Pro emulator disponible</li>
-              <li>Strict TDD mode: <span class="highlight-2">true</span></li>
+              <li>Strict TDD mode: <span class="highlight-1">true</span></li>
               <li>Clean Architecture requerida</li>
             </ul>
           </div>
@@ -1032,7 +1135,7 @@ Testing Capabilities:
 
       <section>
         <h2>Paso 2 — Preflight</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <pre><code>Usuario: "A2, B2, C4, D1"
 
 A. Ritmo:     A2 → Automatico
@@ -1043,7 +1146,7 @@ D. Revision:  D1 → 400 lineas</code></pre>
 
       <section>
         <h2>Paso 3 — Explore → Propose → Spec → Design → Tasks</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-2" style="margin-top: var(--space-lg);">
           <div>
             <p class="lead">5 fases ejecutadas</p>
@@ -1079,15 +1182,15 @@ D. Revision:  D1 → 400 lineas</code></pre>
 
       <section>
         <h2>Paso 4 — sdd-apply (PR 1)</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-2" style="margin-top: var(--space-lg);">
           <div>
             <p class="lead">Implementado</p>
             <ul>
               <li><span class="highlight-1">pubspec.yaml</span> — riverpod, go_router, get_it</li>
               <li><span class="highlight-2">Clean Architecture dirs</span></li>
-              <li><span class="highlight-3">design_tokens.dart</span></li>
-              <li><span class="highlight-4">Greeting entity</span> + test</li>
+              <li><span class="highlight-cyan">design_tokens.dart</span></li>
+              <li><span class="highlight-3">Greeting entity</span> + test</li>
               <li><span class="highlight-1">GreetingRepository</span> + test</li>
               <li><span class="highlight-2">GreetingRepositoryImpl</span> + test</li>
             </ul>
@@ -1123,9 +1226,9 @@ class GreetingRepositoryImpl
 
       <section>
         <h2>Quality Gates</h2>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <div class="grid-3" style="margin-top: var(--space-lg);">
-          <div class="card">
+          <div class="card card-glow">
             <h3>QA Gate</h3>
             <p>dart analyze — 0 errores<br>flutter test — 100% pass<br>Coverage ≥ 80%</p>
           </div>
@@ -1140,25 +1243,439 @@ class GreetingRepositoryImpl
         </div>
       </section>
 
-      <section class="centered" data-background-color="var(--bg-dark)">
-        <p class="label text-on-dark" style="color: var(--accent-2);">Emulator Test</p>
-        <p class="stat-hero text-on-dark">Pixel 10 Pro</p>
-        <p class="stat-label text-on-dark">Android + iOS — ambos pasan sin errores</p>
+      <section class="centered" data-background-color="#0a0a0f">
+        <p class="label" style="color: var(--accent-1);">Emulator Test</p>
+        <p class="stat-hero">Pixel 10 Pro</p>
+        <p class="stat-label">Android + iOS — ambos pasan sin errores</p>
       </section>
 
       <!-- ============================================================ -->
-      <!-- SECCION 14: CIERRE -->
+      <!-- SECCION: ENGRAM SERVER -->
+      <!-- ============================================================ -->
+
+      <section class="centered" data-background-color="#0a0a0f">
+        <h1 class="text-on-dark" style="font-size: clamp(3rem, 5vw, 5rem);">Engram</h1>
+        <div class="bar bar-cyan"></div>
+        <p class="lead text-on-dark">Memoria persistente para agentes IA.</p>
+      </section>
+
+      <section>
+        <h2>Que es Engram?</h2>
+        <div class="bar bar-cyan"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div>
+            <p class="lead">El cerebro que tu agente necesita</p>
+            <ul>
+              <li><span class="highlight-cyan">Un binario Go</span> con SQLite + FTS5</li>
+              <li><span class="highlight-1">Local-first:</span> sin Node, Python, ni Docker</li>
+              <li><span class="highlight-2">Agent-agnostic:</span> funciona con cualquier agente MCP</li>
+              <li><span class="highlight-3">MCP server:</span> expone 20 herramientas de memoria</li>
+              <li><span class="highlight-1">CLI + TUI + HTTP API</span></li>
+            </ul>
+          </div>
+          <div>
+            <pre><code>Agent (Claude Code / OpenCode / Gemini CLI)
+    ↓ MCP stdio
+Engram (single Go binary)
+    ↓
+SQLite + FTS5 (~/.engram/engram.db)</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Arquitectura de Engram</h2>
+        <div class="bar bar-cyan"></div>
+        <div class="grid-3" style="margin-top: var(--space-lg);">
+          <div class="card card-glow">
+            <h3>Save & Update</h3>
+            <p><span class="highlight-cyan">mem_save</span><br><span class="highlight-cyan">mem_update</span><br><span class="highlight-cyan">mem_delete</span><br><span class="highlight-cyan">mem_suggest_topic_key</span></p>
+          </div>
+          <div class="card card-accent-1">
+            <h3>Search & Retrieve</h3>
+            <p><span class="highlight-1">mem_search</span><br><span class="highlight-1">mem_context</span><br><span class="highlight-1">mem_timeline</span><br><span class="highlight-1">mem_get_observation</span></p>
+          </div>
+          <div class="card card-accent-3">
+            <h3>Session Lifecycle</h3>
+            <p><span class="highlight-3">mem_session_start</span><br><span class="highlight-3">mem_session_end</span><br><span class="highlight-3">mem_session_summary</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Herramientas MCP (20 tools)</h2>
+        <div class="bar bar-cyan"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div>
+            <p class="lead">Conflict Surfacing</p>
+            <ul>
+              <li><span class="highlight-2">mem_judge</span> — Verificar conflictos</li>
+              <li><span class="highlight-2">mem_compare</span> — Comparar memorias</li>
+            </ul>
+            <p class="lead" style="margin-top: var(--space-md);">Lifecycle Review</p>
+            <ul>
+              <li><span class="highlight-1">mem_review</span> — Revision de ciclo de vida</li>
+            </ul>
+          </div>
+          <div>
+            <p class="lead">Utilities</p>
+            <ul>
+              <li><span class="highlight-3">mem_save_prompt</span> — Guardar prompts</li>
+              <li><span class="highlight-3">mem_stats</span> — Estadisticas</li>
+              <li><span class="highlight-3">mem_capture_passive</span> — Captura pasiva</li>
+              <li><span class="highlight-3">mem_merge_projects</span> — Fusionar proyectos</li>
+              <li><span class="highlight-3">mem_current_project</span> — Detectar proyecto</li>
+              <li><span class="highlight-3">mem_doctor</span> — Diagnosticos</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Instalacion de Engram</h2>
+        <div class="bar bar-cyan"></div>
+        <pre><code># macOS / Linux
+brew install gentleman-programming/tap/engram
+
+# Setup por agente
+engram setup claude-code
+engram setup opencode
+engram setup gemini-cli
+
+# Verificar
+engram tui</code></pre>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div class="card card-glow">
+            <h3>Un binario. Un SQLite.</h3>
+            <p>Sin dependencias externas. Todo corre en tu maquina local.</p>
+          </div>
+          <div class="card card-accent-1">
+            <h3>Cloud opcional</h3>
+            <p>Replicacion opt-in, shared access, browser dashboard.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Engram: La Promesa</h2>
+        <div class="bar bar-cyan"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div>
+            <p class="lead">Mas contexto vs Engram</p>
+            <ul>
+              <li><span class="highlight-3">Context stuffing:</span> 10K tokens en el prompt</li>
+              <li><span class="highlight-3">Basic RAG:</span> busqueda por similaridad</li>
+              <li><span class="highlight-1">Engram:</span> memoria estructurada y persistente</li>
+            </ul>
+          </div>
+          <div>
+            <div class="card card-accent-1">
+              <h3>Instalar. Codificar. Engram recuerda.</h3>
+              <p>Un cerebro para muchos agentes. Un solo binario. Cero dependencias.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SECCION: GGA - GENTLEMAN GUARDIAN ANGEL -->
+      <!-- ============================================================ -->
+
+      <section class="centered" data-background-color="#0a0a0f">
+        <h1 class="text-on-dark" style="font-size: clamp(3rem, 5vw, 5rem);">GGA</h1>
+        <div class="bar bar-accent-1"></div>
+        <p class="lead text-on-dark">Gentleman Guardian Angel — Code review con IA.</p>
+      </section>
+
+      <section>
+        <h2>Que es GGA?</h2>
+        <div class="bar bar-accent-1"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div>
+            <p class="lead">Review automatico en cada commit</p>
+            <ul>
+              <li><span class="highlight-1">Provider-agnostic:</span> Claude, Gemini, Codex, Ollama</li>
+              <li><span class="highlight-1">Zero dependencies:</span> Pure Bash, sin Node/Python/Go</li>
+              <li><span class="highlight-1">Git native:</span> pre-commit hook estandar</li>
+              <li><span class="highlight-1">Smart caching:</span> skip archivos sin cambios</li>
+              <li><span class="highlight-1">PR review mode:</span> revisa PRs completos</li>
+            </ul>
+          </div>
+          <div>
+            <pre><code>┌─────────────────┐
+│   git commit    │
+│  (staged files) │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│   AI Review     │
+│  (any LLM)      │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│  ✅ Pass/Fail   │
+│  (with details) │
+└─────────────────┘</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Providers de IA para GGA</h2>
+        <div class="bar bar-accent-1"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div>
+            <table style="width: 100%; font-size: var(--size-small);">
+              <thead>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                  <th style="text-align: left; padding: 8px;">Provider</th>
+                  <th style="text-align: left; padding: 8px;">Config</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style="padding: 8px;">Claude</td><td><span class="highlight-1">claude</span></td></tr>
+                <tr><td style="padding: 8px;">Gemini</td><td><span class="highlight-2">gemini</span></td></tr>
+                <tr><td style="padding: 8px;">Codex</td><td><span class="highlight-3">codex</span></td></tr>
+                <tr><td style="padding: 8px;">OpenCode</td><td><span class="highlight-cyan">opencode</span></td></tr>
+                <tr><td style="padding: 8px;">Ollama</td><td><span class="highlight-1">ollama:model</span></td></tr>
+                <tr><td style="padding: 8px;">LM Studio</td><td><span class="highlight-2">lmstudio</span></td></tr>
+                <tr><td style="padding: 8px;">GitHub Models</td><td><span class="highlight-3">github:model</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <pre><code># Instalar
+brew install gentleman-programming/tap/gga
+
+# Inicializar
+gga init
+gga install
+
+# Ejecutar manualmente
+gga run
+
+# CI/CD mode
+gga run --ci
+
+# PR review
+gga run --pr-mode</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Como Funciona GGA</h2>
+        <div class="bar bar-accent-1"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div>
+            <p class="lead">Flujo de trabajo</p>
+            <ul>
+              <li>1. <span class="highlight-1">git commit</span> activa el hook</li>
+              <li>2. GGA lee <span class="highlight-1">AGENTS.md</span> con tus reglas</li>
+              <li>3. Analiza archivos staged con el LLM</li>
+              <li>4. <span class="highlight-1">Cache inteligente:</span> skip sin cambios</li>
+              <li>5. Return: <span class="highlight-1">pass/fail</span> con detalles</li>
+            </ul>
+          </div>
+          <div>
+            <div class="card card-accent-1">
+              <h3>Skills de GGA</h3>
+              <p>
+                <span class="highlight-1">gga-branch-pr</span> — PR creation<br>
+                <span class="highlight-1">gga-commit-hygiene</span> — Commit review<br>
+                <span class="highlight-1">gga-docs-alignment</span> — Docs updates<br>
+                <span class="highlight-1">gga-issue-creation</span> — Issue creation<br>
+                <span class="highlight-1">gga-shellcheck-standards</span> — Bash scripts<br>
+                <span class="highlight-1">gga-testing-coverage</span> — Test coverage
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SECCION: ECOSISTEMA GENTLE AI -->
+      <!-- ============================================================ -->
+
+      <section class="centered" data-background-color="#0a0a0f">
+        <h1 class="text-on-dark" style="font-size: clamp(3rem, 5vw, 5rem);">Ecosistema Gentle AI</h1>
+        <div class="bar bar-accent-3"></div>
+        <p class="lead text-on-dark">Mas que un instalador — un configurador de ecosistema.</p>
+      </section>
+
+      <section>
+        <h2>Componentes de Gentle AI</h2>
+        <div class="bar bar-accent-3"></div>
+        <div class="grid-3" style="margin-top: var(--space-lg);">
+          <div class="card card-glow">
+            <h3>Engram</h3>
+            <p>Memoria persistente cross-session via MCP. Deteccion automatica de proyecto, full-text search, git sync.</p>
+          </div>
+          <div class="card card-accent-1">
+            <h3>SDD</h3>
+            <p>Spec-Driven Development — 10 fases, incluyendo sdd-onboard. El agente maneja SDD organicamente.</p>
+          </div>
+          <div class="card card-accent-2">
+            <h3>Skills</h3>
+            <p>20+ skills organizados por categoria: SDD, foundation, code quality, documentation.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Componentes de Gentle AI</h2>
+        <div class="bar bar-accent-3"></div>
+        <div class="grid-3" style="margin-top: var(--space-lg);">
+          <div class="card card-accent-3">
+            <h3>Context7</h3>
+            <p>MCP server para documentacion live de frameworks y librerias. Docs en tiempo real.</p>
+          </div>
+          <div class="card card-accent-4">
+            <h3>Persona</h3>
+            <p>Inyeccion de persona Gentleman o neutral. Teaching-oriented por defecto.</p>
+          </div>
+          <div class="card card-glow">
+            <h3>Permissions</h3>
+            <p>Defaults de seguridad. Deny list: .ssh, .pem, .env, credentials, AWS, etc.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>GGA + Engram = Ecosistema</h2>
+        <div class="bar bar-accent-3"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div>
+            <p class="lead">Trabaja en conjunto</p>
+            <ul>
+              <li><span class="highlight-3">GGA:</span> Code review automatico en commit</li>
+              <li><span class="highlight-1">Engram:</span> Memoria persistente entre sesiones</li>
+              <li><span class="highlight-2">SDD:</span> Workflow de desarrollo por especificaciones</li>
+              <li><span class="highlight-cyan">Skills:</span> Patrones de coding reutilizables</li>
+              <li><span class="highlight-1">MCP:</span> Protocolo estandar para herramientas</li>
+            </ul>
+          </div>
+          <div>
+            <pre><code># Gentle AI instala todo
+gentle-ai install
+
+# Componentes configurados:
+✅ Engram (memoria persistente)
+✅ SDD (spec-driven workflow)
+✅ Skills (20+ coding patterns)
+✅ Context7 (live docs)
+✅ GGA (AI code review)
+✅ Persona (teaching-oriented)
+✅ Permissions (security-first)</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Agentes Soportados</h2>
+        <div class="bar bar-accent-3"></div>
+        <div class="grid-3" style="margin-top: var(--space-lg);">
+          <div class="card card-glow">
+            <h3>Full Delegation</h3>
+            <p>Claude Code, OpenCode, Kilo Code, Gemini CLI, Cursor, VS Code Copilot, Kimi Code, Kiro IDE, Qwen Code</p>
+          </div>
+          <div class="card card-accent-1">
+            <h3>Solo Agent</h3>
+            <p>Codex, Windsurf, Antigravity, OpenClaw, Trae</p>
+          </div>
+          <div class="card card-accent-3">
+            <h3>Package Managed</h3>
+            <p>Pi (gentle-pi harness + Engram memory)</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Instalacion del Ecosistema</h2>
+        <div class="bar bar-accent-3"></div>
+        <pre><code># macOS / Linux
+curl -fsSL https://raw.githubusercontent.com/.../install.sh | bash
+
+# Windows
+scoop bucket add gentleman https://github.com/.../scoop-bucket
+scoop install gentle-ai
+
+# Despues de instalar, en tu proyecto:
+/sdd-init                    # Detectar stack + testing
+gentle-ai skill-registry     # Indexar skills</code></pre>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div class="card card-accent-1">
+            <h3>15 Agentes Soportados</h3>
+            <p>Claude Code, OpenCode, Cursor, Gemini CLI, Codex, Windsurf, Pi, y mas.</p>
+          </div>
+          <div class="card card-accent-3">
+            <h3>Una vez instalado</h3>
+            <p>Tu agente tiene memoria, skills, workflow, MCP tools, y persona que ensena.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>El Pipeline Completo</h2>
+        <div class="bar bar-accent-3"></div>
+        <div class="process-flow" style="margin-top: var(--space-lg);">
+          <div class="process-step">
+            <div class="process-node" style="background: var(--accent-3);">
+              <span style="font-size: 1.5rem;">🧠</span>
+            </div>
+            <span class="text-accent-3"><strong>Engram</strong></span>
+            <p style="font-size: var(--size-small);">Memoria</p>
+          </div>
+          <span class="process-arrow">→</span>
+          <div class="process-step">
+            <div class="process-node" style="background: var(--accent-1);">
+              <span style="font-size: 1.5rem;">📋</span>
+            </div>
+            <span class="text-accent-1"><strong>SDD</strong></span>
+            <p style="font-size: var(--size-small);">Especificacion</p>
+          </div>
+          <span class="process-arrow">→</span>
+          <div class="process-step">
+            <div class="process-node" style="background: var(--accent-2);">
+              <span style="font-size: 1.5rem;">🛠️</span>
+            </div>
+            <span class="text-accent-2"><strong>Skills</strong></span>
+            <p style="font-size: var(--size-small);">Patrones</p>
+          </div>
+          <span class="process-arrow">→</span>
+          <div class="process-step">
+            <div class="process-node" style="background: var(--accent-cyan);">
+              <span style="font-size: 1.5rem;">🔌</span>
+            </div>
+            <span class="text-cyan"><strong>MCP</strong></span>
+            <p style="font-size: var(--size-small);">Herramientas</p>
+          </div>
+          <span class="process-arrow">→</span>
+          <div class="process-step">
+            <div class="process-node" style="background: var(--accent-4);">
+              <span style="font-size: 1.5rem;">😇</span>
+            </div>
+            <span class="text-accent-4"><strong>GGA</strong></span>
+            <p style="font-size: var(--size-small);">Review</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SECCION: CIERRE -->
       <!-- ============================================================ -->
 
       <section class="centered">
         <p class="label">Resultado</p>
-        <div class="bar"></div>
+        <div class="bar bar-cyan"></div>
         <p class="impact">Un "Hola Mundo" con el <span class="highlight-1">proceso completo</span> de desarrollo profesional.</p>
       </section>
 
-      <section class="centered" data-background-color="var(--bg-dark)">
-        <h1 class="text-on-dark">Gentle AI + SDD</h1>
-        <div class="bar bar-accent-2"></div>
+      <section class="centered" data-background-color="#0a0a0f">
+        <h1 class="text-on-dark" style="font-size: clamp(3rem, 5vw, 5rem);">
+          <span class="glow-text">Gentle AI + SDD</span>
+        </h1>
+        <div class="bar bar-cyan"></div>
         <p class="lead text-on-dark">El desarrollador dirige. La IA ejecuta.</p>
       </section>
 
