@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:prueba/main.dart';
+import 'package:flutter_sdd_hello_world/main.dart';
 
 void main() {
   testWidgets('Hello World app launches and displays greeting', (WidgetTester tester) async {

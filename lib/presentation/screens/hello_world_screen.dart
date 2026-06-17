@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:prueba/domain/entities/greeting.dart';
-import 'package:prueba/presentation/providers/hello_world_provider.dart';
-import 'package:prueba/presentation/widgets/glassmorphism_card.dart';
-import 'package:prueba/presentation/theme/design_tokens.dart';
+import 'package:flutter_sdd_hello_world/domain/entities/greeting.dart';
+import 'package:flutter_sdd_hello_world/presentation/providers/hello_world_provider.dart';
+import 'package:flutter_sdd_hello_world/presentation/widgets/glassmorphism_card.dart';
+import 'package:flutter_sdd_hello_world/presentation/theme/design_tokens.dart';
 
 class HelloWorldScreen extends ConsumerWidget {
   const HelloWorldScreen({super.key});

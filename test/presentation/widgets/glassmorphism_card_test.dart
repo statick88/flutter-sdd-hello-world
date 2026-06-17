@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
-import 'package:prueba/presentation/widgets/glassmorphism_card.dart';
+import 'package:flutter_sdd_hello_world/presentation/widgets/glassmorphism_card.dart';
 
 void main() {
   group('GlassmorphismCard', () {

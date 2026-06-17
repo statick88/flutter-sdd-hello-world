@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prueba/presentation/theme/design_tokens.dart';
+import 'package:flutter_sdd_hello_world/presentation/theme/design_tokens.dart';
 
 class AppTheme {
   AppTheme._();

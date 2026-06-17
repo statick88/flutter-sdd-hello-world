@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:prueba/presentation/screens/hello_world_screen.dart';
+import 'package:flutter_sdd_hello_world/presentation/screens/hello_world_screen.dart';
 
 final router = GoRouter(
   initialLocation: '/',

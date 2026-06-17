@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:prueba/config/router.dart';
-import 'package:prueba/presentation/theme/app_theme.dart';
+import 'package:flutter_sdd_hello_world/config/router.dart';
+import 'package:flutter_sdd_hello_world/presentation/theme/app_theme.dart';
 
 void main() {
   runApp(const ProviderScope(child: PruebaApp()));

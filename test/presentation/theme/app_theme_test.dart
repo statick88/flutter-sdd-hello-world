@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
-import 'package:prueba/presentation/theme/app_theme.dart';
-import 'package:prueba/presentation/theme/design_tokens.dart';
+import 'package:flutter_sdd_hello_world/presentation/theme/app_theme.dart';
+import 'package:flutter_sdd_hello_world/presentation/theme/design_tokens.dart';
 
 void main() {
   group('AppTheme', () {

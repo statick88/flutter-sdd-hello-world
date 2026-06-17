@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:prueba/presentation/providers/hello_world_provider.dart';
-import 'package:prueba/data/repositories/greeting_repository_impl.dart';
-import 'package:prueba/domain/repositories/greeting_repository.dart';
+import 'package:flutter_sdd_hello_world/presentation/providers/hello_world_provider.dart';
+import 'package:flutter_sdd_hello_world/data/repositories/greeting_repository_impl.dart';
+import 'package:flutter_sdd_hello_world/domain/repositories/greeting_repository.dart';
 
 void main() {
   group('HelloWorldProvider', () {
