@@ -5,6 +5,7 @@ Presentación sobre el ecosistema Gentle AI para desarrollo de software asistido
 ## Enlace a la Presentación
 
 🔗 **[Ver Presentación en GitHub Pages](https://statick88.github.io/gentle-ai-taller/)**
+🔗 **[Código Flutter (SDD)](https://github.com/statick88/flutter-sdd-hello-world)**
 
 ## Contenido
 
@@ -18,7 +19,7 @@ Presentación sobre el ecosistema Gentle AI para desarrollo de software asistido
 | **Engram** | Memoria persistente para agentes |
 | **GGA** | Gentleman Guardian Angel (code review) |
 | **UI/UX** | Principios de diseño de interfaces |
-| **Referencias** | 12 referencias en formato IEEE |
+| **Referencias** | 13 referencias en formato IEEE |
 
 ### Herramientas Cubiertas
 
