@@ -224,11 +224,21 @@
           <span class="glow-text">Desarrollo asistido por IA</span>
         </h1>
         <div class="bar bar-cyan" style="width: 200px; margin: 2rem auto;"></div>
-        <div style="margin-top: 2rem;">
-          <p style="font-size: clamp(1.5rem, 2.5vw, 2.2rem); color: var(--text-on-dark); margin-bottom: 0.5rem; font-weight: 600;">Diego Medardo Saavedra Garcia</p>
-          <p style="font-size: clamp(1rem, 1.5vw, 1.3rem); color: var(--accent-cyan); font-family: var(--font-mono); letter-spacing: 0.05em;">FullStack Developer & Cybersecurity Consultant</p>
+        <div style="margin-top: 2rem; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap;">
+          <div style="flex-shrink: 0;">
+            <img src="statick.png" alt="Diego Saavedra" style="width: 180px; height: 180px; border-radius: 50%; border: 3px solid var(--accent-cyan); box-shadow: 0 0 30px rgba(0,255,255,0.3); object-fit: cover;">
+          </div>
+          <div style="text-align: left;">
+            <p style="font-size: clamp(1.5rem, 2.5vw, 2.2rem); color: var(--text-on-dark); margin-bottom: 0.5rem; font-weight: 600;">Diego Medardo Saavedra Garcia</p>
+            <p style="font-size: clamp(1rem, 1.5vw, 1.3rem); color: var(--accent-cyan); font-family: var(--font-mono); letter-spacing: 0.05em;">FullStack Developer & Cybersecurity Consultant</p>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 0.5rem;">MSc Ciberseguridad UCM · 10+ anios de experiencia</p>
+          </div>
         </div>
         <div style="margin-top: 3rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+          <div style="text-align: center;">
+            <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem;">PORTAFOLIO</p>
+            <p style="font-size: 1rem; color: var(--accent-2);">statick88.github.io</p>
+          </div>
           <div style="text-align: center;">
             <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem;">GITHUB</p>
             <p style="font-size: 1rem; color: var(--accent-2);">github.com/statick88</p>
@@ -244,7 +254,7 @@
         </div>
         <div style="margin-top: 2rem;">
           <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">
-            10+ anios construyendo software seguro · MSc Ciberseguridad UCM · 100+ repos publicos
+            10+ anios construyendo software seguro · Docente Universitario · 100+ repos publicos
           </p>
         </div>
       </section>
@@ -1272,6 +1282,7 @@ class GreetingRepositoryImpl
               <li><span class="highlight-3">MCP server:</span> expone 20 herramientas de memoria</li>
               <li><span class="highlight-1">CLI + TUI + HTTP API</span></li>
             </ul>
+            <p style="margin-top: var(--space-md); font-size: var(--size-small);"><span class="highlight-cyan">Repo:</span> <span class="text-cyan">https://github.com/Gentleman-Programming/engram</span></p>
           </div>
           <div>
             <pre><code>Agent (Claude Code / OpenCode / Gemini CLI)
@@ -1354,6 +1365,7 @@ engram tui</code></pre>
             <p>Replicacion opt-in, shared access, browser dashboard.</p>
           </div>
         </div>
+        <p style="margin-top: var(--space-md); font-size: var(--size-small);"><span class="highlight-cyan">Docs:</span> <span class="text-cyan">https://github.com/Gentleman-Programming/engram/blob/main/docs/INSTALLATION.md</span></p>
       </section>
 
       <section>
@@ -1400,6 +1412,7 @@ engram tui</code></pre>
               <li><span class="highlight-1">Smart caching:</span> skip archivos sin cambios</li>
               <li><span class="highlight-1">PR review mode:</span> revisa PRs completos</li>
             </ul>
+            <p style="margin-top: var(--space-md); font-size: var(--size-small);"><span class="highlight-1">Repo:</span> <span class="text-cyan">https://github.com/Gentleman-Programming/gentleman-guardian-angel</span></p>
           </div>
           <div>
             <pre><code>┌─────────────────┐
@@ -1442,6 +1455,7 @@ engram tui</code></pre>
                 <tr><td style="padding: 8px;">GitHub Models</td><td><span class="highlight-3">github:model</span></td></tr>
               </tbody>
             </table>
+            <p style="margin-top: var(--space-md); font-size: var(--size-small);"><span class="highlight-1">Docs:</span> <span class="text-cyan">https://github.com/Gentleman-Programming/gentleman-guardian-angel/blob/main/docs/providers.md</span></p>
           </div>
           <div>
             <pre><code># Instalar
@@ -1520,6 +1534,7 @@ gga run --pr-mode</code></pre>
             <p>20+ skills organizados por categoria: SDD, foundation, code quality, documentation.</p>
           </div>
         </div>
+        <p style="margin-top: var(--space-md); font-size: var(--size-small);"><span class="highlight-3">Repo:</span> <span class="text-cyan">https://github.com/Gentleman-Programming/gentle-ai</span></p>
       </section>
 
       <section>
@@ -1588,16 +1603,17 @@ gentle-ai install
             <p>Pi (gentle-pi harness + Engram memory)</p>
           </div>
         </div>
+        <p style="margin-top: var(--space-md); font-size: var(--size-small);"><span class="highlight-3">Agents:</span> <span class="text-cyan">https://github.com/Gentleman-Programming/gentle-ai/blob/main/docs/agents.md</span></p>
       </section>
 
       <section>
         <h2>Instalacion del Ecosistema</h2>
         <div class="bar bar-accent-3"></div>
         <pre><code># macOS / Linux
-curl -fsSL https://raw.githubusercontent.com/.../install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.sh | bash
 
 # Windows
-scoop bucket add gentleman https://github.com/.../scoop-bucket
+scoop bucket add gentleman https://github.com/Gentleman-Programming/scoop-bucket
 scoop install gentle-ai
 
 # Despues de instalar, en tu proyecto:
@@ -1613,6 +1629,7 @@ gentle-ai skill-registry     # Indexar skills</code></pre>
             <p>Tu agente tiene memoria, skills, workflow, MCP tools, y persona que ensena.</p>
           </div>
         </div>
+        <p style="margin-top: var(--space-md); font-size: var(--size-small);"><span class="highlight-3">Docs:</span> <span class="text-cyan">https://github.com/Gentleman-Programming/gentle-ai/blob/main/docs/intended-usage.md</span></p>
       </section>
 
       <section>
@@ -1662,6 +1679,297 @@ gentle-ai skill-registry     # Indexar skills</code></pre>
       </section>
 
       <!-- ============================================================ -->
+      <!-- SECCION: UI/UX - DISEÑO DE INTERFACES -->
+      <!-- ============================================================ -->
+
+      <section class="centered" data-background-color="#0a0a0f">
+        <h1 class="text-on-dark" style="font-size: clamp(3rem, 5vw, 5rem);">UI/UX</h1>
+        <div class="bar bar-accent-2"></div>
+        <p class="text-on-dark" style="opacity: 0.7;">Diseno de interfaces modernas</p>
+      </section>
+
+      <section>
+        <h2>Principios de Diseno UI/UX</h2>
+        <div class="bar bar-accent-2"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div>
+            <p class="lead">Fundamentos del diseno</p>
+            <ul>
+              <li><span class="highlight-cyan">Claridad:</span> Interfaz intuitiva sin ambigüedades</li>
+              <li><span class="highlight-1">Consistencia:</span> Patrones uniformes en toda la app</li>
+              <li><span class="highlight-2">Jerarquia:</span> Orden visual que guia al usuario</li>
+              <li><span class="highlight-3">Retroalimentacion:</span> Respuesta clara a cada accion</li>
+              <li><span class="highlight-cyan">Accesibilidad:</span> Diseno para todos los usuarios</li>
+            </ul>
+          </div>
+          <div>
+            <div class="card card-glow">
+              <h3>Regla de los 3 segundos</h3>
+              <p>El usuario debe entender que puede hacer en la pantalla en menos de 3 segundos. Si no, el diseno fallo.</p>
+            </div>
+            <div class="card card-accent-1" style="margin-top: var(--space-md);">
+              <h3>Hierarchy Visual</h3>
+              <p>Tamaño → Color → Posicion → Espacio. Estos elementos crean el camino de escaneo natural.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Design Tokens</h2>
+        <div class="bar bar-cyan"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div>
+            <p class="lead">El DNA visual de tu app</p>
+            <pre><code>// Design Tokens - Flutter
+class AppColors {
+  // Primarios
+  static const primary = Color(0xFF00CC33);
+  static const secondary = Color(0xFF00B4E6);
+  static const accent = Color(0xFF9333EA);
+
+  // Superficies
+  static const background = Color(0xFF0A0A0F);
+  static const surface = Color(0xFF1A1A2E);
+  static const card = Color(0xFF16213E);
+
+  // Texto
+  static const textPrimary = Colors.white;
+  static const textSecondary = Color(0xFFB0B0B0);
+}
+
+class AppSpacing {
+  static const xs = 4.0;
+  static const sm = 8.0;
+  static const md = 16.0;
+  static const lg = 24.0;
+  static const xl = 32.0;
+  static const xxl = 48.0;
+}</code></pre>
+          </div>
+          <div>
+            <div class="card card-glow">
+              <h3>Beneficios</h3>
+              <ul>
+                <li>Cambios globales en un solo lugar</li>
+                <li>Consistencia entre componentes</li>
+                <li>Facil mantenimiento y escalabilidad</li>
+                <li>Testing visual automatizado</li>
+              </ul>
+            </div>
+            <div class="card card-accent-2" style="margin-top: var(--space-md);">
+              <h3>3 Capas</h3>
+              <p><span class="highlight-cyan">Primitivos:</span> Colores base<br>
+              <span class="highlight-1">Semanticos:</span> Background, Primary, Error<br>
+              <span class="highlight-2">Componentes:</span> Button.primary, Card.background</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Mobile-First Design</h2>
+        <div class="bar bar-accent-1"></div>
+        <div class="grid-3" style="margin-top: var(--space-lg);">
+          <div class="card card-glow">
+            <h3>Touch Targets</h3>
+            <p><span class="highlight-cyan">Minimo 48x48px</span> para botones. Los dedos son menos precisos que el mouse.</p>
+            <div style="margin-top: var(--space-md);">
+              <div style="width: 48px; height: 48px; background: var(--accent-1); border-radius: 8px; display: flex; align-items: center; justify-content: center;">✓</div>
+            </div>
+          </div>
+          <div class="card card-accent-1">
+            <h3>Espaciado</h3>
+            <p><span class="highlight-1">Sistema de 8pt:</span> Todos los espacios son multiplos de 8px para armonia visual.</p>
+            <div style="margin-top: var(--space-md);">
+              <div style="display: flex; gap: 4px; align-items: flex-end;">
+                <div style="width: 8px; height: 8px; background: var(--accent-2);"></div>
+                <div style="width: 16px; height: 16px; background: var(--accent-2);"></div>
+                <div style="width: 24px; height: 24px; background: var(--accent-2);"></div>
+                <div style="width: 32px; height: 32px; background: var(--accent-2);"></div>
+                <div style="width: 48px; height: 48px; background: var(--accent-2);"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card card-accent-3">
+            <h3>Responsive</h3>
+            <p><span class="highlight-3">Breakpoints:</span> Mobile → Tablet → Desktop. Contenido que se adapta, no que se encoge.</p>
+            <div style="margin-top: var(--space-md);">
+              <div style="display: flex; gap: 8px;">
+                <div style="width: 24px; height: 40px; border: 2px solid var(--accent-3); border-radius: 4px;"></div>
+                <div style="width: 40px; height: 40px; border: 2px solid var(--accent-3); border-radius: 4px;"></div>
+                <div style="width: 60px; height: 40px; border: 2px solid var(--accent-3); border-radius: 4px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Accesibilidad</h2>
+        <div class="bar bar-accent-3"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div>
+            <p class="lead">WCAG 2.2 - Nivel AA</p>
+            <ul>
+              <li><span class="highlight-cyan">Contraste:</span> Minimo 4.5:1 para texto normal</li>
+              <li><span class="highlight-1">Labels:</span> Todos los inputs deben tener label</li>
+              <li><span class="highlight-2">Navigation:</span> Navegacion completa por teclado</li>
+              <li><span class="highlight-3">Screen Readers:</span> Semantica HTML correcta</li>
+              <li><span class="highlight-cyan">Focus:</span> Indicador visible de foco</li>
+            </ul>
+          </div>
+          <div>
+            <pre><code>// Accesibilidad en Flutter
+Semantics(
+  label: 'Boton de enviar',
+  hint: 'Toca para enviar el formulario',
+  button: true,
+  child: ElevatedButton(
+    onPressed: submitForm,
+    child: Text('Enviar'),
+  ),
+)
+
+// Contraste de colores
+// ✅ PASS: #00CC33 on #0A0A0F = 8.2:1
+// ✅ PASS: #FFFFFF on #1A1A2E = 12.5:1
+// ❌ FAIL: #B0B0B0 on #1A1A2E = 3.8:1</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Teoria del Color</h2>
+        <div class="bar bar-accent-2"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div>
+            <p class="lead">Psicologia del color en UX</p>
+            <div class="card card-glow">
+              <div style="display: flex; gap: 12px; margin-bottom: var(--space-md);">
+                <div style="width: 40px; height: 40px; background: #00CC33; border-radius: 8px;"></div>
+                <div>
+                  <p><span class="highlight-cyan">Verde:</span> Exito, crecimiento, accion positiva</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 12px; margin-bottom: var(--space-md);">
+                <div style="width: 40px; height: 40px; background: #00B4E6; border-radius: 8px;"></div>
+                <div>
+                  <p><span class="highlight-2">Azul:</span> Confianza, seguridad, profesionalismo</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 12px; margin-bottom: var(--space-md);">
+                <div style="width: 40px; height: 40px; background: #9333EA; border-radius: 8px;"></div>
+                <div>
+                  <p><span class="highlight-3">Morado:</span> Creatividad, innovacion, premium</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 12px;">
+                <div style="width: 40px; height: 40px; background: #0A0A0F; border: 2px solid #333; border-radius: 8px;"></div>
+                <div>
+                  <p><span class="text-secondary">Oscuro:</span> Sophistication, modernidad, foco</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="card card-accent-1">
+              <h3>60-30-10 Rule</h3>
+              <p><span class="highlight-cyan">60%</span> Superficie (background)<br>
+              <span class="highlight-1">30%</span> Secundario (cards, borders)<br>
+              <span class="highlight-3">10%</span> Acento (CTAs, highlights)</p>
+            </div>
+            <div class="card card-accent-2" style="margin-top: var(--space-md);">
+              <h3>Dark Mode</h3>
+              <p>No es solo invertir colores. Usar <span class="highlight-cyan">grises oscuros</span> (#1A1A2E) en vez de negro puro para reducir fatiga visual.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Tipografia</h2>
+        <div class="bar bar-accent-3"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div>
+            <p class="lead">Jerarquia tipografica</p>
+            <div style="font-family: 'Inter', sans-serif;">
+              <p style="font-size: 2.5rem; font-weight: 700; color: var(--accent-1);">Heading 1 (32px Bold)</p>
+              <p style="font-size: 1.75rem; font-weight: 600; color: var(--accent-2);">Heading 2 (24px Semibold)</p>
+              <p style="font-size: 1.25rem; font-weight: 500; color: var(--accent-3);">Heading 3 (20px Medium)</p>
+              <p style="font-size: 1rem; color: var(--text-primary);">Body Text (16px Regular) - El tamano base para legibilidad optima en movil.</p>
+              <p style="font-size: 0.875rem; color: var(--text-secondary);">Caption (14px) - Para labels, metadata y texto secundario.</p>
+            </div>
+          </div>
+          <div>
+            <div class="card card-glow">
+              <h3>Font Pairing</h3>
+              <pre><code>// Inter + Fira Code (Nuestro stack)
+Headings:    Inter (700, 600)
+Body:        Inter (400, 500)
+Code:        Fira Code (400)
+
+// Google Fonts en Flutter
+GoogleFonts.inter(
+  fontSize: 16,
+  fontWeight: FontWeight.w400,
+  height: 1.5, // line-height
+)</code></pre>
+            </div>
+            <div class="card card-accent-1" style="margin-top: var(--space-md);">
+              <h3>Line Height</h3>
+              <p>1.4-1.6 para body text. Mucho espacio = mas legibilidad. Testing con usuarios reales.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Glassmorphism en Flutter</h2>
+        <div class="bar bar-cyan"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div>
+            <pre><code>// Efecto Glassmorphism
+ClipRRect(
+  borderRadius: BorderRadius.circular(16),
+  child: BackdropFilter(
+    filter: ImageFilter.blur(
+      sigmaX: 16,
+      sigmaY: 16,
+    ),
+    child: Container(
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.05),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: Colors.white.withOpacity(0.1),
+          width: 1,
+        ),
+      ),
+      child: child,
+    ),
+  ),
+)</code></pre>
+          </div>
+          <div>
+            <div class="card card-glow" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1);">
+              <h3>Ejemplo Visual</h3>
+              <p>Este card usa glassmorphism: fondo semi-transparente, blur, y borde sutil. Crea profundidad sin sombras pesadas.</p>
+            </div>
+            <div class="card card-accent-2" style="margin-top: var(--space-md);">
+              <h3>Cuando usarlo</h3>
+              <ul>
+                <li>Modales y dialogs</li>
+                <li>Cards sobre imagenes</li>
+                <li>Navigation bars</li>
+                <li>Sidebar overlays</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
       <!-- SECCION: CIERRE -->
       <!-- ============================================================ -->
 
@@ -1669,6 +1977,145 @@ gentle-ai skill-registry     # Indexar skills</code></pre>
         <p class="label">Resultado</p>
         <div class="bar bar-cyan"></div>
         <p class="impact">Un "Hola Mundo" con el <span class="highlight-1">proceso completo</span> de desarrollo profesional.</p>
+      </section>
+
+      <section>
+        <h2>App en Funcionamiento</h2>
+        <div class="bar bar-cyan"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg); align-items: center;">
+          <div>
+            <img src="app-screenshot.png" alt="Hello World App running on Android" style="width: 100%; max-width: 280px; border-radius: 12px; border: 2px solid rgba(0, 204, 51, 0.3); box-shadow: 0 0 30px rgba(0, 204, 51, 0.2);">
+          </div>
+          <div>
+            <p class="lead">Flutter + Clean Architecture</p>
+            <ul>
+              <li><span class="highlight-cyan">TDD:</span> Tests pasando al 100%</li>
+              <li><span class="highlight-1">Clean Architecture:</span> Domain / Data / Presentation</li>
+              <li><span class="highlight-2">Design Tokens:</span> Colores, espaciado, tipografia</li>
+              <li><span class="highlight-3">Riverpod:</span> State management</li>
+            </ul>
+            <div class="card card-glow" style="margin-top: var(--space-md);">
+              <p style="font-size: var(--size-small);"><span class="highlight-1">Repo:</span> <span class="text-cyan">https://github.com/statick88/gentle-ai-taller</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Codigo Fuente Generado</h2>
+        <div class="bar bar-accent-2"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div>
+            <p class="lead">Estructura del Proyecto</p>
+            <pre><code>lib/
+├── config/
+│   └── routes.dart
+├── data/
+│   └── repositories/
+│       └── greeting_repository_impl.dart
+├── domain/
+│   ├── entities/
+│   │   └── greeting.dart
+│   └── repositories/
+│       └── greeting_repository.dart
+├── presentation/
+│   ├── pages/
+│   │   └── hello_world_page.dart
+│   ├── providers/
+│   │   └── greeting_provider.dart
+│   └── theme/
+│       └── design_tokens.dart
+└── main.dart</code></pre>
+          </div>
+          <div>
+            <p class="lead">Puerta de Entrada</p>
+            <pre><code>import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'presentation/pages/hello_world_page.dart';
+import 'presentation/theme/design_tokens.dart';
+
+void main() {
+  runApp(const ProviderScope(
+    child: MyApp(),
+  ));
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'SDD Hello World',
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.lightTheme,
+      home: const HelloWorldPage(),
+    );
+  }
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SECCION: REFERENCIAS -->
+      <!-- ============================================================ -->
+
+      <section class="centered" data-background-color="#0a0a0f">
+        <h1 class="text-on-dark" style="font-size: clamp(3rem, 5vw, 5rem);">Referencias</h1>
+        <div class="bar bar-accent-3"></div>
+        <p class="text-on-dark" style="opacity: 0.7;">Documentacion oficial y fuentes</p>
+      </section>
+
+      <section>
+        <h2>Referencias [1-6]</h2>
+        <div class="bar bar-accent-3"></div>
+        <div style="margin-top: var(--space-lg); font-size: var(--size-small); line-height: 1.8;">
+          <p style="color: var(--text-secondary);">[1] Gentleman-Programming, "Gentle-AI: Ecosystem configurator for AI coding agents," GitHub, 2024. [En linea]. Disponible: <span class="highlight-cyan">https://github.com/Gentleman-Programming/gentle-ai</span></p>
+          <p style="color: var(--text-secondary);">[2] Gentleman-Programming, "Engram: Persistent memory system for AI coding agents," GitHub, 2024. [En linea]. Disponible: <span class="highlight-cyan">https://github.com/Gentleman-Programming/engram</span></p>
+          <p style="color: var(--text-secondary);">[3] Gentleman-Programming, "Gentleman Guardian Angel: Provider-agnostic code review using AI," GitHub, 2024. [En linea]. Disponible: <span class="highlight-cyan">https://github.com/Gentleman-Programming/gentleman-guardian-angel</span></p>
+          <p style="color: var(--text-secondary);">[4] D. Saavedra, "Portafolio profesional - FullStack Developer & Cybersecurity Consultant," 2024. [En linea]. Disponible: <span class="highlight-cyan">https://statick88.github.io</span></p>
+          <p style="color: var(--text-secondary);">[5] Gentleman-Programming, "Gentle-AI Components Documentation," 2024. [En linea]. Disponible: <span class="highlight-cyan">https://github.com/Gentleman-Programming/gentle-ai/blob/main/docs/components.md</span></p>
+          <p style="color: var(--text-secondary);">[6] Gentleman-Programming, "Engram Architecture Documentation," 2024. [En linea]. Disponible: <span class="highlight-cyan">https://github.com/Gentleman-Programming/engram/blob/main/DOCS.md</span></p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Referencias [7-12]</h2>
+        <div class="bar bar-accent-3"></div>
+        <div style="margin-top: var(--space-lg); font-size: var(--size-small); line-height: 1.8;">
+          <p style="color: var(--text-secondary);">[7] Anthropic, "Model Context Protocol (MCP): Open standard for AI tool integration," 2024. [En linea]. Disponible: <span class="highlight-cyan">https://modelcontextprotocol.io</span></p>
+          <p style="color: var(--text-secondary);">[8] Vercel, "Next.js: The React Framework for Production," 2024. [En linea]. Disponible: <span class="highlight-cyan">https://nextjs.org</span></p>
+          <p style="color: var(--text-secondary);">[9] Flutter Dev Team, "Flutter: Build apps for any screen," 2024. [En linea]. Disponible: <span class="highlight-cyan">https://flutter.dev</span></p>
+          <p style="color: var(--text-secondary);">[10] OpenCode, "OpenCode: Terminal-first AI coding assistant," 2024. [En linea]. Disponible: <span class="highlight-cyan">https://opencode.ai</span></p>
+          <p style="color: var(--text-secondary);">[11] Supabase, "Supabase: Open source Firebase alternative," 2024. [En linea]. Disponible: <span class="highlight-cyan">https://supabase.com</span></p>
+          <p style="color: var(--text-secondary);">[12] D. Saavedra, "LinkedIn: FullStack Developer & Cybersecurity Consultant," 2024. [En linea]. Disponible: <span class="highlight-cyan">https://linkedin.com/in/dsaavedra88</span></p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Herramientas y Enlaces</h2>
+        <div class="bar bar-cyan"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div>
+            <p class="lead">Gentle AI Ecosystem</p>
+            <ul style="font-size: var(--size-small);">
+              <li><span class="highlight-3">Gentle AI:</span> <span class="highlight-cyan">https://github.com/Gentleman-Programming/gentle-ai</span></li>
+              <li><span class="highlight-1">Engram:</span> <span class="highlight-cyan">https://github.com/Gentleman-Programming/engram</span></li>
+              <li><span class="highlight-2">GGA:</span> <span class="highlight-cyan">https://github.com/Gentleman-Programming/gentleman-guardian-angel</span></li>
+              <li><span class="highlight-3">SDD Skills:</span> <span class="highlight-cyan">https://github.com/Gentleman-Programming/gentle-ai/tree/main/skills</span></li>
+            </ul>
+          </div>
+          <div>
+            <p class="lead">Plataformas</p>
+            <ul style="font-size: var(--size-small);">
+              <li><span class="highlight-1">OpenCode:</span> <span class="highlight-cyan">https://opencode.ai</span></li>
+              <li><span class="highlight-2">Claude Code:</span> <span class="highlight-cyan">https://claude.ai/code</span></li>
+              <li><span class="highlight-cyan">MCP Protocol:</span> <span class="highlight-cyan">https://modelcontextprotocol.io</span></li>
+              <li><span class="highlight-3">Context7:</span> <span class="highlight-cyan">https://context7.com</span></li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section class="centered" data-background-color="#0a0a0f">
