@@ -1,4 +1,6 @@
-# GitFlow Tree — Hello World SDD
+# GitFlow Tree — flutter-sdd-hello-world
+
+> **Project**: Flutter Hello World demonstrating SDD (Spec-Driven Development) with Clean Architecture, TDD, and Quality Gates
 
 ```
 main
