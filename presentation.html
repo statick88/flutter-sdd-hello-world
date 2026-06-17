@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hola Mundo con SDD + OpenCode</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f5f5f7;
+      --bg-dark: #1a1a2e;
+      --bg-accent: #003366;
+
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --text-muted: #7a7a7a;
+      --text-on-dark: #ffffff;
+
+      --accent-1: #0066cc;
+      --accent-2: #00a86b;
+      --accent-3: #ff6b35;
+      --accent-4: #7c3aed;
+
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --size-stat-hero: clamp(6rem, 15vw, 14rem);
+      --size-stat: clamp(4rem, 10vw, 8rem);
+      --size-impact-hero: clamp(4rem, 12vw, 7rem);
+      --size-impact: clamp(3rem, 8vw, 5rem);
+      --size-h1: clamp(6rem, 8vw, 9rem);
+      --size-h2: clamp(4rem, 12vw, 7rem);
+      --size-h3: clamp(1.75rem, 3.5vw, 3rem);
+      --size-h4: clamp(1.5rem, 2.5vw, 2rem);
+      --size-body: clamp(1.25rem, 2vw, 2rem);
+      --size-body-lg: clamp(1.5rem, 2.5vw, 2.25rem);
+      --size-body-xl: clamp(2.5rem, 3vw, 3.5rem);
+      --size-small: clamp(1rem, 1.25vw, 1.25rem);
+      --size-label: clamp(1.5rem, 2.5vw, 2.25rem);
+
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 2rem;
+      --space-lg: 3rem;
+      --space-xl: 4rem;
+
+      --bar-width: 120px;
+      --bar-height: 8px;
+      --card-radius: 8px;
+      --card-padding: 2rem;
+
+      --content-max-width: 1400px;
+      --slide-padding: 60px;
+    }
+
+    .reveal {
+      font-family: var(--font-body);
+      font-weight: 400;
+      color: var(--text-primary);
+    }
+
+    .reveal .slides section {
+      text-align: left;
+      padding: var(--slide-padding);
+      box-sizing: border-box;
+    }
+
+    .reveal .slides section.centered {
+      text-align: center;
+    }
+
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--text-primary);
+      text-transform: none;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin: 0 0 0.5em 0;
+    }
+
+    .reveal h1 { font-size: var(--size-h1); }
+    .reveal h2 { font-size: var(--size-h2); }
+    .reveal h3 { font-size: var(--size-h3); }
+    .reveal h4 { font-size: var(--size-h4); }
+
+    .reveal p {
+      font-size: var(--size-body);
+      line-height: 1.5;
+      margin: 0 0 1em 0;
+    }
+
+    .reveal ul, .reveal ol {
+      margin: 0;
+      padding: 0;
+      list-style-position: outside;
+      margin-left: 1.5em;
+    }
+
+    .reveal li {
+      margin-bottom: 0.5em;
+      line-height: 1.4;
+      font-size: var(--size-body);
+    }
+
+    .reveal .label {
+      font-family: var(--font-mono);
+      font-size: var(--size-label);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-1);
+      margin-bottom: 0;
+    }
+
+    .reveal .lead {
+      font-size: var(--size-body-xl);
+      color: var(--text-secondary);
+    }
+
+    .reveal .stat {
+      font-family: var(--font-mono);
+      font-size: var(--size-stat);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--accent-1);
+      margin-bottom: 0;
+    }
+
+    .reveal .stat-hero {
+      font-family: var(--font-mono);
+      font-size: var(--size-stat-hero);
+      font-weight: 700;
+      line-height: 0.9;
+      color: var(--accent-1);
+      margin-bottom: 0;
+    }
+
+    .reveal .stat-label {
+      font-size: var(--size-body-lg);
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-top: var(--space-sm);
+    }
+
+    .reveal .impact {
+      font-size: var(--size-impact);
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .reveal .impact-hero {
+      font-size: var(--size-impact-hero);
+      font-weight: 700;
+      line-height: 1.05;
+    }
+
+    .bar {
+      width: var(--bar-width);
+      height: var(--bar-height);
+      background: var(--accent-1);
+      margin-bottom: var(--space-md);
+    }
+
+    .centered .bar {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .bar-accent-2 { background: var(--accent-2); }
+    .bar-accent-3 { background: var(--accent-3); }
+    .bar-accent-4 { background: var(--accent-4); }
+
+    .reveal .text-on-dark { color: var(--text-on-dark); }
+    .reveal .text-muted { color: var(--text-muted); }
+    .reveal .text-secondary { color: var(--text-secondary); }
+    .reveal .text-accent-1 { color: var(--accent-1); }
+    .reveal .text-accent-2 { color: var(--accent-2); }
+    .reveal .text-accent-3 { color: var(--accent-3); }
+    .reveal .text-accent-4 { color: var(--accent-4); }
+
+    .reveal .highlight-1 { color: var(--accent-1); font-weight: 600; }
+    .reveal .highlight-2 { color: var(--accent-2); font-weight: 600; }
+    .reveal .highlight-3 { color: var(--accent-3); font-weight: 600; }
+    .reveal .highlight-4 { color: var(--accent-4); font-weight: 600; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-lg);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-md);
+    }
+
+    .card {
+      background: var(--bg-secondary);
+      border-radius: var(--card-radius);
+      padding: var(--card-padding);
+      border-left: 4px solid var(--accent-1);
+    }
+
+    .card-accent-2 { border-left-color: var(--accent-2); }
+    .card-accent-3 { border-left-color: var(--accent-3); }
+    .card-accent-4 { border-left-color: var(--accent-4); }
+
+    .card h3 {
+      font-size: var(--size-h4);
+      margin-bottom: var(--space-xs);
+    }
+
+    .card p {
+      font-size: var(--size-body);
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    .reveal pre {
+      font-family: var(--font-mono);
+      font-size: var(--size-small);
+      background: var(--bg-dark);
+      color: var(--text-on-dark);
+      padding: var(--space-md);
+      border-radius: var(--card-radius);
+      text-align: left;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .reveal pre code {
+      font-family: inherit;
+      line-height: 1.6;
+    }
+
+    .process-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-md);
+    }
+
+    .process-step { text-align: center; }
+
+    .process-node {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto var(--space-xs);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .process-arrow {
+      font-size: 2rem;
+      color: var(--text-muted);
+    }
+
+    .process-label {
+      font-size: var(--size-body);
+      font-weight: 500;
+    }
+
+    .slide-footer {
+      position: fixed;
+      bottom: 30px;
+      left: var(--slide-padding);
+      font-size: var(--size-label);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-footer">SDD + OpenCode</div>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: Title -->
+      <section class="centered">
+        <p class="label">Spec-Driven Development</p>
+        <h1>Hola Mundo</h1>
+        <div class="bar"></div>
+        <p class="lead">SDD + Clean Architecture + TDD + Gates</p>
+      </section>
+
+      <!-- SLIDE 2: Section Break - Que es SDD -->
+      <section class="centered" data-background-color="var(--bg-dark)">
+        <h1 class="text-on-dark">Que es SDD?</h1>
+        <div class="bar bar-accent-3"></div>
+        <p class="text-on-dark" style="opacity: 0.8;">El desarrollador dirige, la IA ejecuta.</p>
+      </section>
+
+      <!-- SLIDE 3: Impact -->
+      <section class="centered">
+        <p class="impact">El programador deja de ser <span class="highlight-3">picacodigo</span> y se convierte en <span class="highlight-1">arquitecto</span>.</p>
+      </section>
+
+      <!-- SLIDE 4: SDD Flow -->
+      <section>
+        <h2>El Flujo SDD</h2>
+        <div class="bar"></div>
+        <div class="process-flow" style="margin-top: var(--space-lg);">
+          <div class="process-step">
+            <div class="process-node" style="background: var(--accent-1);">HU</div>
+            <p class="process-label">Historia</p>
+          </div>
+          <div class="process-arrow">→</div>
+          <div class="process-step">
+            <div class="process-node" style="background: var(--accent-2);">Spec</div>
+            <p class="process-label">Spec</p>
+          </div>
+          <div class="process-arrow">→</div>
+          <div class="process-step">
+            <div class="process-node" style="background: var(--accent-3);">Design</div>
+            <p class="process-label">Diseno</p>
+          </div>
+          <div class="process-arrow">→</div>
+          <div class="process-step">
+            <div class="process-node" style="background: var(--accent-4);">Tasks</div>
+            <p class="process-label">Tareas</p>
+          </div>
+          <div class="process-arrow">→</div>
+          <div class="process-step">
+            <div class="process-node" style="background: var(--accent-1);">Apply</div>
+            <p class="process-label">Codigo</p>
+          </div>
+          <div class="process-arrow">→</div>
+          <div class="process-step">
+            <div class="process-node" style="background: var(--accent-2);">Verify</div>
+            <p class="process-label">Gates</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: Section Break - La Sesion -->
+      <section class="centered" data-background-color="var(--accent-1)">
+        <h1 class="text-on-dark">La Sesion</h1>
+        <div class="bar bar-accent-2"></div>
+        <p class="text-on-dark" style="opacity: 0.8;">De 0 a "Hola Mundo" con el proceso completo.</p>
+      </section>
+
+      <!-- SLIDE 6: Preflight -->
+      <section>
+        <h2>Preflight Obligatorio</h2>
+        <div class="bar"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div class="card">
+            <h3>Ritmo</h3>
+            <p>Automatico — ejecuta fases sin pausa</p>
+          </div>
+          <div class="card card-accent-2">
+            <h3>Artefactos</h3>
+            <p>Engram — persistencia sin archivos extra</p>
+          </div>
+          <div class="card card-accent-3">
+            <h3>PRs</h3>
+            <p>Auto-forecast — decide segun el tamano</p>
+          </div>
+          <div class="card card-accent-4">
+            <h3>Revision</h3>
+            <p>400 lineas — frenar si excede</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: Subagentes -->
+      <section class="centered">
+        <p class="impact">Cada fase tiene su <span class="highlight-1">subagente</span> especializado.</p>
+      </section>
+
+      <!-- SLIDE 8: Agentes por fase -->
+      <section>
+        <h2>Agentes en Accion</h2>
+        <div class="bar"></div>
+        <div class="grid-3" style="margin-top: var(--space-lg);">
+          <div class="card">
+            <h3>sdd-explore</h3>
+            <p>Analiza el codebase y propone la HU</p>
+          </div>
+          <div class="card card-accent-2">
+            <h3>sdd-spec</h3>
+            <p>Escribe requisitos y escenarios</p>
+          </div>
+          <div class="card card-accent-3">
+            <h3>sdd-design</h3>
+            <p>Arquitectura tecnica + design tokens</p>
+          </div>
+          <div class="card card-accent-4">
+            <h3>sdd-tasks</h3>
+            <p>Divide en tareas implementables</p>
+          </div>
+          <div class="card">
+            <h3>sdd-apply</h3>
+            <p>Escribe tests primero, luego codigo</p>
+          </div>
+          <div class="card card-accent-2">
+            <h3>sdd-verify</h3>
+            <p>Ejecuta todos los gates de calidad</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: Clean Architecture -->
+      <section>
+        <h2>Clean Architecture</h2>
+        <div class="bar"></div>
+        <pre><code>lib/
+├── domain/
+│   ├── entities/
+│   │   └── greeting.dart
+│   └── repositories/
+│       └── greeting_repository.dart
+├── data/
+│   └── repositories/
+│       └── greeting_repository_impl.dart
+├── presentation/
+│   ├── screens/
+│   │   └── hello_world_screen.dart
+│   ├── providers/
+│   │   └── hello_world_provider.dart
+│   └── theme/
+│       └── design_tokens.dart
+└── config/
+    └── router.dart</code></pre>
+      </section>
+
+      <!-- SLIDE 10: Section Break - TDD -->
+      <section class="centered" data-background-color="var(--accent-2)">
+        <h1 class="text-on-dark">TDD</h1>
+        <div class="bar"></div>
+        <p class="text-on-dark" style="opacity: 0.8;">Red → Green → Refactor</p>
+      </section>
+
+      <!-- SLIDE 11: TDD Impact -->
+      <section class="centered">
+        <p class="impact">Primero el <span class="highlight-3">test</span>, despues el <span class="highlight-2">codigo</span>.</p>
+      </section>
+
+      <!-- SLIDE 12: Gates -->
+      <section>
+        <h2>Quality Gates</h2>
+        <div class="bar"></div>
+        <div class="grid-3" style="margin-top: var(--space-lg);">
+          <div class="card">
+            <h3>QA Gate</h3>
+            <p>dart analyze — 0 errores<br>flutter test — 100% pass<br>Coverage ≥ 80%</p>
+          </div>
+          <div class="card card-accent-3">
+            <h3>UI/UX Gate</h3>
+            <p>Glassmorphism<br>8pt grid<br>Dark mode + A11y</p>
+          </div>
+          <div class="card card-accent-4">
+            <h3>Security Gate</h3>
+            <p>Sin secretos hardcodeados<br>Dependencias sin CVEs<br>Input validation</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 13: Emulator -->
+      <section class="centered" data-background-color="var(--bg-dark)">
+        <p class="label text-on-dark" style="color: var(--accent-2);">Emulator Test</p>
+        <p class="stat-hero text-on-dark">Pixel 10 Pro</p>
+        <p class="stat-label text-on-dark">Android + iOS — ambos pasan sin errores</p>
+      </section>
+
+      <!-- SLIDE 14: Resultado -->
+      <section class="centered">
+        <p class="label">Resultado</p>
+        <div class="bar"></div>
+        <p class="impact">Un "Hola Mundo" con el <span class="highlight-1">proceso completo</span> de desarrollo profesional.</p>
+      </section>
+
+      <!-- SLIDE 15: Section Break - OpenCode -->
+      <section class="centered" data-background-color="var(--accent-4)">
+        <h1 class="text-on-dark">OpenCode</h1>
+        <div class="bar bar-accent-2"></div>
+        <p class="text-on-dark" style="opacity: 0.8;">El orquestador que coordina todo.</p>
+      </section>
+
+      <!-- SLIDE 16: OpenCode -->
+      <section>
+        <h2>OpenCode + SDD</h2>
+        <div class="bar"></div>
+        <div class="grid-2" style="margin-top: var(--space-lg);">
+          <div>
+            <p class="lead">Subagentes</p>
+            <ul>
+              <li><span class="highlight-1">sdd-explore</span> — analiza</li>
+              <li><span class="highlight-2">sdd-spec</span> — escribe specs</li>
+              <li><span class="highlight-3">sdd-design</span> — disena</li>
+              <li><span class="highlight-4">sdd-apply</span> — implementa</li>
+            </ul>
+          </div>
+          <div>
+            <p class="lead">Gates</p>
+            <ul>
+              <li><span class="highlight-1">qa-engineer</span> — calidad</li>
+              <li><span class="highlight-3">design-reviewer</span> — UI/UX</li>
+              <li><span class="highlight-4">security-reviewer</span> — seguridad</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 17: Cierre -->
+      <section class="centered" data-background-color="var(--bg-dark)">
+        <h1 class="text-on-dark">SDD</h1>
+        <div class="bar bar-accent-2"></div>
+        <p class="lead text-on-dark">El desarrollador dirige. La IA ejecuta.</p>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      center: true,
+      transition: 'fade',
+      transitionSpeed: 'fast',
+      backgroundTransition: 'fade',
+      width: 1920,
+      height: 1080,
+      margin: 0.08,
+      minScale: 0.2,
+      maxScale: 2.0
+    });
+  </script>
+</body>
+</html>
